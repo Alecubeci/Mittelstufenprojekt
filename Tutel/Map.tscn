@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://iby3m3t8bsot"]
+
+[ext_resource type="PackedScene" uid="uid://oo36hp3tko8e" path="res://Player.tscn" id="1_atclo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ja37"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lspy1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0684514, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_8ja37")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_lspy1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.829798, 0.291172, 0.476082, 0, -0.853096, 0.521754, 0.558064, -0.432951, -0.707897, 0, 9.37459, -13.0703)
+shadow_enabled = true
+
+[node name="Node3D" parent="." instance=ExtResource("1_atclo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132642, 0)
