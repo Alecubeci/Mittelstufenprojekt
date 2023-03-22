@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy78nsd7fmeoi"]
+[gd_scene load_steps=6 format=3 uid="uid://cbrtm4bvojy3f"]
 
-[ext_resource type="Script" path="res://Pistol.gd" id="1_whkqa"]
-[ext_resource type="PackedScene" uid="uid://5gw7npbpb8is" path="res://Cartridge.tscn" id="2_1wshv"]
+[ext_resource type="Script" path="res://Gun & Resources/Pistol.gd" id="1_axugq"]
+[ext_resource type="PackedScene" path="res://Gun & Resources/Cartridge.tscn" id="2_opi60"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o8kcx"]
 
@@ -12,8 +12,8 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Pistol" type="Node3D"]
-script = ExtResource("1_whkqa")
-Cartridge = ExtResource("2_1wshv")
+script = ExtResource("1_axugq")
+Cartridge = ExtResource("2_opi60")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0996278, 0, 0, 0, 0.0933118, 0, 0, 0, 0.434288, 0, 0.173657, 0)

@@ -1,1 +1,8 @@
 res://Map.tscn
+res://Pistol.tscn
+res://turret.tscn
+res://turret.gd
+res://Gun & Resources/Pistol.tscn
+res://Turret/turret.tscn
+res://Turret/TurretLogic.gd
+res://Turret/turret1.gd

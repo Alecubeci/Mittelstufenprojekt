@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbh0b6hkvwgo7"]
+
+[ext_resource type="Script" path="res://Turret/turret1.gd" id="1_ybdio"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xhk5m"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5g0vd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_urevj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7up2o"]
+
+[node name="Turret" type="Node3D"]
+script = ExtResource("1_ybdio")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.437, 0, 0, 0, 1, 0, 1.466, 0)
+shape = SubResource("CylinderShape3D_xhk5m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.201, 0, 0, 0, 0.5, 0, 0, 0, 0.201, 0, 3.2572, 0)
+mesh = SubResource("CylinderMesh_5g0vd")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.4368, 0, 0, 0, 1, 0, 1.46561, 0)
+mesh = SubResource("CylinderMesh_urevj")
+skeleton = NodePath("../..")
+
+[node name="ShootingPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7537, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 1.02651, 0)
+shape = SubResource("CylinderShape3D_7up2o")

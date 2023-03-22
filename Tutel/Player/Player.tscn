@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://oo36hp3tko8e"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_0ocjn"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_0ocjn"]
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_5qrsm"]
-[ext_resource type="Script" path="res://GunControl.gd" id="3_gexsg"]
-[ext_resource type="PackedScene" uid="uid://cy78nsd7fmeoi" path="res://Pistol.tscn" id="4_mvln7"]
+[ext_resource type="Script" path="res://Gun & Resources/GunControl.gd" id="3_gexsg"]
+[ext_resource type="PackedScene" uid="uid://cy78nsd7fmeoi" path="res://Gun & Resources/Pistol.tscn" id="4_mvln7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r44cd"]
 

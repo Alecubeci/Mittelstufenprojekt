@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://iby3m3t8bsot"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://oo36hp3tko8e" path="res://Player.tscn" id="1_atclo"]
+[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="1_atclo"]
+[ext_resource type="PackedScene" uid="uid://hsn870od4hhf" path="res://Turret/turret.tscn" id="2_a0c3p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ja37"]
 
@@ -27,3 +28,6 @@ shadow_enabled = true
 
 [node name="Node3D" parent="." instance=ExtResource("1_atclo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132642, 0)
+
+[node name="Turret" parent="." instance=ExtResource("2_a0c3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63337, 0, 0)

@@ -1,12 +1,17 @@
 2a60927148abd1d33b818b535e306557
-::res://::1678872199
-Cartridge.gd::GDScript::-1::1678356169::0::1::::<>Node3D<>::
-Cartridge.tscn::PackedScene::2119445200952325374::1678356169::0::1::::<><>::res://Cartridge.gd
+::res://::1679473156
 CharacterBody3D.gd::GDScript::-1::1678144843::0::1::::<>CharacterBody3D<>::
-GunControl.gd::GDScript::-1::1678190567::0::1::::<>Node3D<>::
 icon.svg::CompressedTexture2D::1901540140532811661::1678129174::1678364473::1::::<><>::
-Map.tscn::PackedScene::565083011356209199::1678356169::0::1::::<><>::uid://oo36hp3tko8e
-Pistol.gd::GDScript::-1::1678237085::0::1::::<>Node3D<>::
-Pistol.tscn::PackedScene::6525461530426756964::1678356169::0::1::::<><>::res://Pistol.gd<>uid://5gw7npbpb8is
+Map.tscn::PackedScene::565083011356209199::1679473099::0::1::::<><>::uid://oo36hp3tko8e<>uid://hsn870od4hhf
 Player.gd::GDScript::-1::1678130923::0::1::::<>Node3D<>::
-Player.tscn::PackedScene::1013300927031312862::1678356169::0::1::::<><>::res://Player.gd<>res://CharacterBody3D.gd<>res://GunControl.gd<>uid://cy78nsd7fmeoi
+Player.tscn::PackedScene::-1::1679473117::0::1::::<><>::res://Player.gd<>res://CharacterBody3D.gd<>res://Gun & Resources/GunControl.gd<>uid://cy78nsd7fmeoi
+::res://Gun & Resources/::1679473117
+Cartridge.gd::GDScript::-1::1678356169::0::1::::<>Node3D<>::
+Cartridge.tscn::PackedScene::-1::1679473117::0::1::::<><>::res://Gun & Resources/Cartridge.gd
+GunControl.gd::GDScript::-1::1678190567::0::1::::<>Node3D<>::
+Pistol.gd::GDScript::-1::1678237085::0::1::::<>Node3D<>::
+Pistol.tscn::PackedScene::6525461530426756964::1679473117::0::1::::<><>::res://Pistol.gd<>uid://5gw7npbpb8is
+::res://Player/::1679473156
+::res://Turret/::1679473131
+turret.gd::GDScript::-1::1679473099::0::1::::<>Node3D<>::
+turret.tscn::PackedScene::529330677152696359::1679473131::0::1::::<><>::res://turret.gd
