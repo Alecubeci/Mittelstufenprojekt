@@ -1,1 +1,5 @@
 res://Map.tscn
+res://MainMenu.tscn
+res://MainMenu.gd
+res://TitleScreen/MainMenu.tscn
+res://TitleScreen/MainMenu.gd
