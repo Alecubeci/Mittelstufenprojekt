@@ -1,4 +1,5 @@
 res://Map.tscn
+<<<<<<< HEAD
 res://Pistol.tscn
 res://turret.tscn
 res://turret.gd
@@ -6,3 +7,9 @@ res://Gun & Resources/Pistol.tscn
 res://Turret/turret.tscn
 res://Turret/TurretLogic.gd
 res://Turret/turret1.gd
+=======
+res://MainMenu.tscn
+res://MainMenu.gd
+res://TitleScreen/MainMenu.tscn
+res://TitleScreen/MainMenu.gd
+>>>>>>> a033724d6dc1530fd2678d9e11b562e94de538d3

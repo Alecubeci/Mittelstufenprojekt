@@ -1,17 +1,22 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679473156
+::res://::1679480750
 CharacterBody3D.gd::GDScript::-1::1678144843::0::1::::<>CharacterBody3D<>::
-icon.svg::CompressedTexture2D::1901540140532811661::1678129174::1678364473::1::::<><>::
-Map.tscn::PackedScene::565083011356209199::1679473099::0::1::::<><>::uid://oo36hp3tko8e<>uid://hsn870od4hhf
-Player.gd::GDScript::-1::1678130923::0::1::::<>Node3D<>::
-Player.tscn::PackedScene::-1::1679473117::0::1::::<><>::res://Player.gd<>res://CharacterBody3D.gd<>res://Gun & Resources/GunControl.gd<>uid://cy78nsd7fmeoi
-::res://Gun & Resources/::1679473117
+icon.svg::CompressedTexture2D::1901540140532811661::1678129174::1679480750::1::::<><>::
+Map.tscn::PackedScene::-1::1679473159::0::1::::<><>::res://Player/Player.tscn<>uid://hsn870od4hhf
+RubikIso-Regular.ttf::FontFile::7041423131869186207::1679480729::1679480729::1::::<><>::
+::res://Gun & Resources/::1679473164
 Cartridge.gd::GDScript::-1::1678356169::0::1::::<>Node3D<>::
 Cartridge.tscn::PackedScene::-1::1679473117::0::1::::<><>::res://Gun & Resources/Cartridge.gd
 GunControl.gd::GDScript::-1::1678190567::0::1::::<>Node3D<>::
 Pistol.gd::GDScript::-1::1678237085::0::1::::<>Node3D<>::
-Pistol.tscn::PackedScene::6525461530426756964::1679473117::0::1::::<><>::res://Pistol.gd<>uid://5gw7npbpb8is
-::res://Player/::1679473156
-::res://Turret/::1679473131
-turret.gd::GDScript::-1::1679473099::0::1::::<>Node3D<>::
-turret.tscn::PackedScene::529330677152696359::1679473131::0::1::::<><>::res://turret.gd
+Pistol.tscn::PackedScene::4879301210927865893::1679473164::0::1::::<><>::res://Gun & Resources/Pistol.gd<>res://Gun & Resources/Cartridge.tscn
+::res://Player/::1679473159
+Player.gd::GDScript::-1::1678130923::0::1::::<>Node3D<>::
+Player.tscn::PackedScene::-1::1679473159::0::1::::<><>::res://Player/Player.gd<>res://CharacterBody3D.gd<>res://Gun & Resources/GunControl.gd<>uid://cy78nsd7fmeoi
+::res://TitleScreen/::1679480729
+MainMenu.gd::GDScript::-1::1679480729::0::1::::<>Node2D<>::
+MainMenu.tscn::PackedScene::5643574926182913296::1679480729::0::1::::<><>::res://TitleScreen/MainMenu.gd<>uid://c7k6hfamwwnn8
+::res://Turret/::1679480661
+turret1.gd::GDScript::-1::1679473782::0::1::::<>Node3D<>::
+turret.tscn::PackedScene::2472581521743393172::1679480661::0::1::::<><>::res://Turret/turret1.gd
+TurretLogic.gd::GDScript::-1::1679473601::0::1::::<>Node3D<>::
