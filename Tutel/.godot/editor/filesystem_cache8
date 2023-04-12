@@ -1,24 +1,25 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681281027
-CharacterBody3D.gd::GDScript::-1::1679705138::0::1::::<>CharacterBody3D<>::
-icon.svg::CompressedTexture2D::1901540140532811661::1678132774::1679484350::1::::<><>::
-Map.tscn::PackedScene::2868516236978196790::1679736394::0::1::::<><>::uid://cy2na347y2dj6<>uid://bbh0b6hkvwgo7
-RubikIso-Regular.ttf::FontFile::7041423131869186207::1679484329::1679484329::1::::<><>::
-::res://Gun & Resources/::1679736394
-Cartridge.gd::GDScript::-1::1678359769::0::1::::<>Node3D<>::
-Cartridge.tscn::PackedScene::-1::1679476717::0::1::::<><>::res://Gun & Resources/Cartridge.gd
-GunControl.gd::GDScript::-1::1678194167::0::1::::<>Node3D<>::
-Pistol.gd::GDScript::-1::1679729209::0::1::::<>Node3D<>::
-Pistol.tscn::PackedScene::4879301210927865893::1679736394::0::1::::<><>::res://Gun & Resources/Pistol.gd<>res://Gun & Resources/Cartridge.tscn
-::res://Player/::1679736394
-Player.gd::GDScript::-1::1678134523::0::1::::<>Node3D<>::
-Player.tscn::PackedScene::6513902651904760053::1679736394::0::1::::<><>::res://Player/Player.gd<>res://CharacterBody3D.gd<>res://Gun & Resources/GunControl.gd<>uid://cbrtm4bvojy3f
-::res://Singletons/::1679831098
-GameData.gd::GDScript::-1::1679831098::0::1::::<>Node<>::
-::res://TitleScreen/::1679736394
-MainMenu.gd::GDScript::-1::1679484329::0::1::::<>Node2D<>::
-MainMenu.tscn::PackedScene::5643574926182913296::1679736394::0::1::::<><>::res://TitleScreen/MainMenu.gd<>uid://c7k6hfamwwnn8
-::res://Turret/::1679832101
-turret1.gd::GDScript::-1::1679477382::0::1::::<>Node3D<>::
-turret.tscn::PackedScene::2472581521743393172::1679832101::0::1::::<><>::res://Turret/turret1.gd
-TurretLogic.gd::GDScript::-1::1679477201::0::1::::<>Node3D<>::
+::res://::1681292326
+CharacterBody3D.gd::GDScript::-1::1681291504::0::1::::<>CharacterBody3D<>::
+icon.svg::CompressedTexture2D::1901540140532811661::1681291504::1681291531::1::::<><>::
+Map.tscn::PackedScene::2868516236978196790::1681291946::0::1::::<><>::uid://cy2na347y2dj6<>res://random_map.gd<>uid://bbh0b6hkvwgo7
+random_map.gd::GDScript::-1::1681291944::0::1::::<>Node3D<>::
+RubikIso-Regular.ttf::FontFile::7041423131869186207::1681291504::1681291504::1::::<><>::
+::res://Gun & Resources/::1681291946
+Cartridge.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
+Cartridge.tscn::PackedScene::-1::1681291504::0::1::::<><>::res://Gun & Resources/Cartridge.gd
+GunControl.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
+Pistol.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
+Pistol.tscn::PackedScene::4879301210927865893::1681291946::0::1::::<><>::res://Gun & Resources/Pistol.gd<>res://Gun & Resources/Cartridge.tscn
+::res://Player/::1681291946
+Player.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
+Player.tscn::PackedScene::6513902651904760053::1681291946::0::1::::<><>::res://Player/Player.gd<>res://CharacterBody3D.gd<>res://Gun & Resources/GunControl.gd<>uid://cbrtm4bvojy3f
+::res://Singletons/::1681291504
+GameData.gd::GDScript::-1::1681291504::0::1::::<>Node<>::
+::res://TitleScreen/::1681291945
+MainMenu.gd::GDScript::-1::1681291504::0::1::::<>Node2D<>::
+MainMenu.tscn::PackedScene::5643574926182913296::1681291945::0::1::::<><>::res://TitleScreen/MainMenu.gd<>uid://c7k6hfamwwnn8
+::res://Turret/::1681291946
+turret1.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
+turret.tscn::PackedScene::2472581521743393172::1681291946::0::1::::<><>::res://Turret/turret1.gd
+TurretLogic.gd::GDScript::-1::1681291504::0::1::::<>Node3D<>::
