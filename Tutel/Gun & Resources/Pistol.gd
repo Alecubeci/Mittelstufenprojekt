@@ -14,15 +14,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	shoot()
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 	pass
 
 func shoot():
 	
 	var newCartridge = Cartridge.instantiate()
 	newCartridge.global_transform = $Muzzle.global_transform
-	#newCartridge.speed = bullet_speed
+	
 	var scene_root = get_tree().get_root().get_children()[0]
 	scene_root.add_child(newCartridge)
 	print("shoot")
 	can_shoot = false
+

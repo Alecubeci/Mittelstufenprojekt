@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://bg4sbqc7ghy67"]
 
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="1_atclo"]
-[ext_resource type="PackedScene" uid="uid://hsn870od4hhf" path="res://Turret/turret.tscn" id="2_a0c3p"]
+[ext_resource type="PackedScene" uid="uid://cy2na347y2dj6" path="res://Player/Player.tscn" id="1_atclo"]
+[ext_resource type="PackedScene" uid="uid://bbh0b6hkvwgo7" path="res://Turret/turret.tscn" id="2_a0c3p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ja37"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sire"]
+albedo_color = Color(0.27451, 0.556863, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lspy1"]
 
@@ -17,6 +20,7 @@ metadata/_edit_group_ = true
 transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_8ja37")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_2sire")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 20, 0, 0, 0)
