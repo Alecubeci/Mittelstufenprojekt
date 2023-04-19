@@ -1,6 +1,7 @@
-res://Map.tscn
-res://random_map.gd
 res://TitleScreen/MainMenu.tscn
+res://Map.tscn
 res://Player/Player.tscn
 res://Gun & Resources/Pistol.tscn
 res://Turret/turret.tscn
+res://Turret/Turret2/Turret2.tscn
+res://Turret/Turret3/Turret3.tscn
