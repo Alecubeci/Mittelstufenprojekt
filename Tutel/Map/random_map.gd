@@ -1,0 +1,96 @@
+extends Node3D
+
+# Variablen zur Konfiguration der Karte
+var map_width = randi_range(40,60)
+var map_depth = randi_range(20,60)
+var path_width = 3
+var path_depth = 3
+var tile_size = 1
+var max_straight = 5  # erhöht die maximale Anzahl an Tiles, die der Pfad geradeaus gehen kann
+var turn_prob = 0.5   # erhöht die Wahrscheinlichkeit, dass der Pfad die Richtung ändert
+
+
+# Die verschiedenen Tile-Typen
+const GRASS_TILE = 0
+const PATH_TILE = 1
+
+# Das Tile-Array
+var map_data = []
+
+
+# Start- und Endpunkt des Pfades
+var path_start = Vector3(randi_range(path_width, map_width-path_width)*tile_size, 0, map_depth*tile_size)
+var path_end = Vector3(map_width - path_start.x, 0, 0)
+
+
+
+
+func _ready():
+	# Erstelle die Karte
+	generate_map()
+
+func generate_map():
+	var path = [path_start]
+	var visited = []
+	var num_paths = 0
+
+	var grass_material = StandardMaterial3D.new()
+	grass_material.albedo_color = Color(0, 1, 0)
+
+	var path_material = StandardMaterial3D.new()
+	path_material.albedo_color = Color(1, 0, 0)
+
+	var grass_tile = BoxMesh.new()
+	var path_tile = BoxMesh.new()
+
+	var current_pos = path_start
+	var end_pos = path_end
+	var num_straight = 0  # Anzahl der Tiles, die der Pfad geradeaus gegangen ist
+	while current_pos != end_pos:
+	# Bestimme mögliche Richtungen (nicht zurück)
+		var directions = []
+		if current_pos.x < end_pos.x:
+			directions.append(Vector3(1,0,0))
+		if current_pos.z < end_pos.z:
+			directions.append(Vector3(0,0,1))
+		if current_pos.x > end_pos.x:
+			directions.append(Vector3(-1,0,0))
+		if current_pos.z > end_pos.z:
+			directions.append(Vector3(0,0,-1))
+
+	# Wähle zufällige Richtung
+		var dir = Vector3.ZERO
+		if len(directions) > 0:
+			if num_straight >= max_straight:  # Richtungswechsel nach maximaler Anzahl an geraden Tiles
+				dir = directions[randi() % len(directions)]
+				num_straight = 0
+			else:
+				if randf() < turn_prob and num_straight > 0:  # erhöhte Wahrscheinlichkeit für Richtungswechsel
+					dir = directions[randi() % len(directions)]
+					num_straight = 0
+				else:
+					dir = directions[randi() % len(directions)]
+					num_straight += 1
+		current_pos += dir*tile_size
+		path.append(current_pos)
+
+
+
+	var y = 0.0
+	for x in range(0, map_width):
+		var z = 0.0
+		for i in range(map_depth):
+			var tile = MeshInstance3D.new()
+			if Vector3(x*tile_size, y, z*tile_size) in path:
+				tile.mesh = BoxMesh.new()
+				tile.mesh.surface_set_material(0, path_material)
+				visited.append(true)
+				num_paths += 1
+			else:
+				tile.mesh = BoxMesh.new() 
+				tile.mesh.surface_set_material(0, grass_material)
+				visited.append(false)
+			tile.transform.origin = Vector3(x * tile_size, y, z * tile_size)
+			add_child(tile)
+			z += tile_size
+		y += 0.0  # Hält alle Tiles auf gleicher Höhe
