@@ -1,13 +1,15 @@
 extends Node3D
 
+class_name GenerateMap 
+
 # Variablen zur Konfiguration der Karte
-var map_width = randi_range(40,60)
-var map_depth = randi_range(20,60)
+var map_width = 60
+var map_depth = 60
 var path_width = 3
 var path_depth = 3
 var tile_size = 1
 var max_straight = 5  # erhöht die maximale Anzahl an Tiles, die der Pfad geradeaus gehen kann
-var turn_prob = 0.5   # erhöht die Wahrscheinlichkeit, dass der Pfad die Richtung ändert
+var turn_prob = 0.75   # erhöht die Wahrscheinlichkeit, dass der Pfad die Richtung ändert
 
 
 # Die verschiedenen Tile-Typen
@@ -19,8 +21,8 @@ var map_data = []
 
 
 # Start- und Endpunkt des Pfades
-var path_start = Vector3(randi_range(path_width, map_width-path_width)*tile_size, 0, map_depth*tile_size)
-var path_end = Vector3(map_width - path_start.x, 0, 0)
+var path_start = Vector3(5, 0, 0)
+var path_end = Vector3(55, 0, 59)
 
 
 
@@ -33,6 +35,7 @@ func generate_map():
 	var path = [path_start]
 	var visited = []
 	var num_paths = 0
+
 
 	var grass_material = StandardMaterial3D.new()
 	grass_material.albedo_color = Color(0, 1, 0)
@@ -57,6 +60,8 @@ func generate_map():
 			directions.append(Vector3(-1,0,0))
 		if current_pos.z > end_pos.z:
 			directions.append(Vector3(0,0,-1))
+		if num_straight >= max_straight:
+			directions.append(-1 * path[-1] / tile_size) # füge Möglichkeit für umgekehrte Bewegung hinzu
 
 	# Wähle zufällige Richtung
 		var dir = Vector3.ZERO
@@ -71,8 +76,14 @@ func generate_map():
 				else:
 					dir = directions[randi() % len(directions)]
 					num_straight += 1
+		else:
+			if len(path) > 1:
+				dir = -1 * (path.pop() - current_pos) / tile_size
+			else:
+				break
 		current_pos += dir*tile_size
 		path.append(current_pos)
+		
 
 
 
