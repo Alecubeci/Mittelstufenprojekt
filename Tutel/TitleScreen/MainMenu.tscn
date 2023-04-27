@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmn14b2f6r4yu"]
 
 [ext_resource type="Script" path="res://TitleScreen/MainMenu.gd" id="1_5tehp"]
-[ext_resource type="FontFile" uid="uid://c7k6hfamwwnn8" path="res://RubikIso-Regular.ttf" id="1_7pt88"]
 [ext_resource type="PackedScene" uid="uid://bg4sbqc7ghy67" path="res://Map.tscn" id="2_k0bvg"]
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://MedievalSharp-Regular.ttf" id="3_qn50n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taxi5"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -48,7 +48,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_7pt88")
+theme_override_fonts/font = ExtResource("3_qn50n")
 theme_override_font_sizes/font_size = 130
 text = "Tutel"
 horizontal_alignment = 1
@@ -69,7 +69,7 @@ theme_override_constants/margin_right = 100
 [node name="New Game Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_7pt88")
+theme_override_fonts/font = ExtResource("3_qn50n")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")
@@ -86,7 +86,7 @@ theme_override_constants/margin_right = 100
 [node name="Options Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_7pt88")
+theme_override_fonts/font = ExtResource("3_qn50n")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")
@@ -103,7 +103,7 @@ theme_override_constants/margin_right = 100
 [node name="Quit Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_7pt88")
+theme_override_fonts/font = ExtResource("3_qn50n")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c7k6hfamwwnn8"
-path="res://.godot/imported/RubikIso-Regular.ttf-1e2d71701077ed1a4813426cf3df93fe.fontdata"
+uid="uid://cyx3xswtmxopj"
+path="res://.godot/imported/MedievalSharp-Regular.ttf-caaeb9d042cbb00c72df35898b0b933a.fontdata"
 
 [deps]
 
-source_file="res://RubikIso-Regular.ttf"
-dest_files=["res://.godot/imported/RubikIso-Regular.ttf-1e2d71701077ed1a4813426cf3df93fe.fontdata"]
+source_file="res://MedievalSharp-Regular.ttf"
+dest_files=["res://.godot/imported/MedievalSharp-Regular.ttf-caaeb9d042cbb00c72df35898b0b933a.fontdata"]
 
 [params]
 
