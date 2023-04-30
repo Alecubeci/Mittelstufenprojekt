@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmn14b2f6r4yu"]
 
 [ext_resource type="Script" path="res://TitleScreen/MainMenu.gd" id="1_5tehp"]
-[ext_resource type="PackedScene" uid="uid://bg4sbqc7ghy67" path="res://Map.tscn" id="2_k0bvg"]
+[ext_resource type="PackedScene" uid="uid://egl6clxcvxbj" path="res://Map.tscn" id="2_k0bvg"]
 [ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://MedievalSharp-Regular.ttf" id="3_qn50n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taxi5"]

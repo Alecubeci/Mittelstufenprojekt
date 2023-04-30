@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh6vjcwfqc6jk"]
+[gd_scene load_steps=6 format=3 uid="uid://dckhx4u4lt8dg"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_akghs"]
+[ext_resource type="Script" path="res://Enemy/enemyCharacterBody3D.gd" id="1_v6gia"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xkrfr"]
 
@@ -11,9 +12,10 @@ albedo_color = Color(0, 0.686275, 0.184314, 1)
 
 [node name="Enemy" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.133, 0)
+script = ExtResource("1_akghs")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_akghs")
+script = ExtResource("1_v6gia")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
 

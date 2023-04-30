@@ -1,20 +1,11 @@
-extends CharacterBody3D
-
-const SPEED = 5.0
-
-var map_generator = GenerateMap.new()
-var spawn_position = map_generator.path_start
+extends Node3D
 
 
-@onready var camera = $Camera3D
-var param = PhysicsRayQueryParameters3D.new()
-
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	#Spawnt den Character an genannter Positiond
-	transform.origin = spawn_position
+	pass # Replace with function body.
 
 
-func _physics_process(delta):
-	# get current physical state.
-	var space_state = get_world_3d().direct_space_state
-
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass

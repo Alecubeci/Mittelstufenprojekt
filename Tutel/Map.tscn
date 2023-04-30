@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg4sbqc7ghy67"]
+[gd_scene load_steps=8 format=3 uid="uid://egl6clxcvxbj"]
 
 [ext_resource type="PackedScene" uid="uid://cy2na347y2dj6" path="res://Player/Player.tscn" id="1_atclo"]
 [ext_resource type="Script" path="res://Map/random_map.gd" id="1_rkfrh"]
 [ext_resource type="PackedScene" uid="uid://bbh0b6hkvwgo7" path="res://Turret/turret.tscn" id="2_a0c3p"]
-[ext_resource type="PackedScene" uid="uid://dh6vjcwfqc6jk" path="res://Enemy/enemy.tscn" id="3_etq38"]
+[ext_resource type="PackedScene" uid="uid://dckhx4u4lt8dg" path="res://Enemy/enemy.tscn" id="3_etq38"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ja37"]
 
