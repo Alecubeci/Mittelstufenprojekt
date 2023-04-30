@@ -25,6 +25,5 @@ func shoot():
 	
 	var scene_root = get_tree().get_root().get_children()[0]
 	scene_root.add_child(newCartridge)
-	print("shoot")
 	can_shoot = false
 

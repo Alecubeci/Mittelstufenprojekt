@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://6jfiva3xbbqr"]
 
 [ext_resource type="Script" path="res://Gun & Resources/Cartridge.gd" id="1_gj5l6"]
 
@@ -6,6 +6,9 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnihn"]
 albedo_color = Color(0.839216, 0.709804, 0.454902, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85kuh"]
+size = Vector3(0.25802, 0.255324, 1.26556)
 
 [node name="Cartridge" type="Node3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -15,3 +18,10 @@ script = ExtResource("1_gj5l6")
 transform = Transform3D(-1.11928e-08, -0.245519, 0, 0.256062, -1.0732e-08, 0, 0, 0, 1.2468, 0.00377201, 0, 0)
 mesh = SubResource("BoxMesh_olor6")
 surface_material_override/0 = SubResource("StandardMaterial3D_qnihn")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_85kuh")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
