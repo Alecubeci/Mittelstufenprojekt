@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dckhx4u4lt8dg"]
+[gd_scene load_steps=7 format=3 uid="uid://dckhx4u4lt8dg"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_akghs"]
 [ext_resource type="Script" path="res://Enemy/enemyCharacterBody3D.gd" id="1_v6gia"]
+[ext_resource type="PackedScene" uid="uid://3o341vagq421" path="res://Enemy/stats.tscn" id="3_1bbqh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xkrfr"]
 
@@ -26,3 +27,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oxahu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_14g1b")
+
+[node name="Stats" parent="CharacterBody3D" instance=ExtResource("3_1bbqh")]
+
+[connection signal="enemy_died" from="CharacterBody3D/Stats" to="." method="_on_stats_enemy_died"]
