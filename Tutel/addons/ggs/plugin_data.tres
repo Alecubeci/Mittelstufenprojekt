@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ggsPluginData" load_steps=23 format=3 uid="uid://dpk53al471l8m"]
+[gd_resource type="Resource" script_class="ggsPluginData" load_steps=25 format=3 uid="uid://dpk53al471l8m"]
 
 [ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_category.gd" id="1_etqds"]
 [ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_plugin_data.gd" id="1_wabe0"]
@@ -19,7 +19,7 @@
 resource_name = "Audio Volume"
 script = ExtResource("6_1skq7")
 bus_name = "Master"
-current = 75.0
+current = 17.0
 default = 75.0
 name = "Audio Volume"
 category = "Audio"
@@ -37,6 +37,29 @@ settings = {
 "Audio Volume": SubResource("Resource_in650")
 }
 item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_in650")])
+
+[sub_resource type="Resource" id="Resource_apahk"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("8_fysof")
+size_setting = "[NONE]"
+current = true
+default = false
+name = "Fullscreen Mode"
+category = "Display"
+icon = ExtResource("7_7ql1v")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_j6avk"]
+resource_name = "Display"
+script = ExtResource("1_etqds")
+name = "Display"
+settings = {
+"Fullscreen Mode": SubResource("Resource_apahk")
+}
+item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_apahk")])
 
 [sub_resource type="Resource" id="Resource_t2a7j"]
 resource_name = "Fullscreen Mode"
@@ -123,9 +146,10 @@ value_hint_string = ""
 [resource]
 script = ExtResource("1_wabe0")
 categories = {
-"Audio": SubResource("Resource_5566n")
+"Audio": SubResource("Resource_5566n"),
+"Display": SubResource("Resource_j6avk")
 }
-category_order = Array[ExtResource("1_etqds")]([SubResource("Resource_5566n")])
+category_order = Array[ExtResource("1_etqds")]([SubResource("Resource_5566n"), SubResource("Resource_j6avk")])
 recent_settings = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_t2a7j"), SubResource("Resource_g8btk"), SubResource("Resource_ie27f")])
 setting_list_cache = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_3so4y"), SubResource("Resource_ie27f"), SubResource("Resource_t2a7j"), SubResource("Resource_u3x2c"), SubResource("Resource_g8btk"), SubResource("Resource_g8ej2")])
 dir_settings = "res://game_settings/settings"

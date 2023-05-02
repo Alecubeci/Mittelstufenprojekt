@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbrtm4bvojy3f"]
+[gd_scene load_steps=6 format=3 uid="uid://bhwvqdkrjweck"]
 
-[ext_resource type="Script" path="res://Gun & Resources/Pistol.gd" id="1_axugq"]
-[ext_resource type="PackedScene" path="res://Gun & Resources/Cartridge.tscn" id="2_opi60"]
+[ext_resource type="Script" path="res://Game/Assets/Weapons/Pistol.gd" id="1_axugq"]
+[ext_resource type="PackedScene" uid="uid://6jfiva3xbbqr" path="res://Game/Assets/Weapons/Cartridge.tscn" id="2_opi60"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o8kcx"]
 

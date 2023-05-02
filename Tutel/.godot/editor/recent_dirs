@@ -1,7 +1,8 @@
-res://TitleScreen
-res://Map
+res://Game/Assets/Weapons
+res://Game/Assets/Turret
+res://Game/Assets/Map
+res://Game/TitleScreen
 res://
-res://Singletons
 <<<<<<< HEAD
 =======
 >>>>>>> a033724d6dc1530fd2678d9e11b562e94de538d3

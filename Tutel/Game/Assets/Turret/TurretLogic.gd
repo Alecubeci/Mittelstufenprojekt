@@ -9,6 +9,3 @@ func turn():
 	#var enemyPos = player
 	#$Barrel.look_at($"../MeshInstance3D".global_transform.origin, Vector3.UP)
 	
-
-
-

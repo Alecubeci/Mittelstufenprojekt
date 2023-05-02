@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://coa10ovymugi4"]
 
-[ext_resource type="Script" path="res://TitleScreen/MainMenu.gd" id="1_5tehp"]
-[ext_resource type="PackedScene" uid="uid://egl6clxcvxbj" path="res://Map.tscn" id="2_k0bvg"]
-[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Assets/MedievalSharp-Regular.ttf" id="3_lskhd"]
+[ext_resource type="Script" path="res://Game/TitleScreen/MainMenu.gd" id="1_d4kpx"]
+[ext_resource type="PackedScene" uid="uid://egl6clxcvxbj" path="res://Game/Assets/Map/Map.tscn" id="2_k0bvg"]
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf" id="3_lskhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taxi5"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -28,7 +28,7 @@ corner_radius_bottom_left = 5
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5tehp")
+script = ExtResource("1_d4kpx")
 MainGameScene = ExtResource("2_k0bvg")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cy2na347y2dj6"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_0ocjn"]
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_5qrsm"]
-[ext_resource type="Script" path="res://Gun & Resources/GunControl.gd" id="3_gexsg"]
-[ext_resource type="PackedScene" uid="uid://cbrtm4bvojy3f" path="res://Gun & Resources/Pistol.tscn" id="4_mvln7"]
+[ext_resource type="Script" path="res://Game/Assets/Player/Player.gd" id="1_8sdts"]
+[ext_resource type="Script" path="res://Game/Assets/Player/CharacterBody3D.gd" id="2_mysiy"]
+[ext_resource type="Script" path="res://Game/Assets/Weapons/GunControl.gd" id="3_5rvb2"]
+[ext_resource type="PackedScene" uid="uid://bhwvqdkrjweck" path="res://Game/Assets/Weapons/Pistol.tscn" id="4_wmgye"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r44cd"]
 
@@ -15,11 +15,11 @@ albedo_color = Color(0.815686, 0.482353, 0.364706, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6gtr2"]
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_0ocjn")
+script = ExtResource("1_8sdts")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32575, 0)
-script = ExtResource("1_5qrsm")
+script = ExtResource("2_mysiy")
 metadata/_edit_group_ = true
 
 [node name="ShapesMesh" type="Node3D" parent="CharacterBody3D"]
@@ -44,5 +44,5 @@ shape = SubResource("CapsuleShape3D_6gtr2")
 transform = Transform3D(0.999692, -0.0175599, 0.0175598, 4.21468e-08, 0.707107, 0.707107, -0.0248334, -0.706889, 0.706889, 0, 11, 10.7602)
 
 [node name="GunControl" type="Node3D" parent="CharacterBody3D"]
-script = ExtResource("3_gexsg")
-startingWeapon = ExtResource("4_mvln7")
+script = ExtResource("3_5rvb2")
+startingWeapon = ExtResource("4_wmgye")

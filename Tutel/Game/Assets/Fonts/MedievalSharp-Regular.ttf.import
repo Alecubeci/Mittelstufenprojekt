@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cyx3xswtmxopj"
-path="res://.godot/imported/MedievalSharp-Regular.ttf-6dcbc3a9f86801864bd4474ff0d45621.fontdata"
+path="res://.godot/imported/MedievalSharp-Regular.ttf-5dc4ff7deba1591a14825141e688417d.fontdata"
 
 [deps]
 
-source_file="res://Assets/MedievalSharp-Regular.ttf"
-dest_files=["res://.godot/imported/MedievalSharp-Regular.ttf-6dcbc3a9f86801864bd4474ff0d45621.fontdata"]
+source_file="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf"
+dest_files=["res://.godot/imported/MedievalSharp-Regular.ttf-5dc4ff7deba1591a14825141e688417d.fontdata"]
 
 [params]
 

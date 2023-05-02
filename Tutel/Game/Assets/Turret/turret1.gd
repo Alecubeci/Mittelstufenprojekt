@@ -1,4 +1,4 @@
-extends "res://Turret/TurretLogic.gd"
+extends Node3D, "res://Turret/TurretLogic.gd"
 
 
 # Called when the node enters the scene tree for the first time.
