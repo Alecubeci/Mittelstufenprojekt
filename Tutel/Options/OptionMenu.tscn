@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3y1akfpxce2g"]
+
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Assets/MedievalSharp-Regular.ttf" id="1_atdtn"]
+[ext_resource type="Script" path="res://Options/OptionMenu.gd" id="1_grm14"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="2_w41os"]
+[ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="4_fwqm8"]
+[ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="5_lhjss"]
+[ext_resource type="AudioStream" uid="uid://ceqynprl8fir2" path="res://Assets/A-Sinister-Power-Rising-GioeleFazzeri.mp3" id="6_rcwll"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="6_v8f16"]
+
+[sub_resource type="Resource" id="Resource_in650"]
+resource_name = "Audio Volume"
+script = ExtResource("5_lhjss")
+bus_name = "Master"
+current = 75.0
+default = 75.0
+name = "Audio Volume"
+category = "Audio"
+icon = ExtResource("4_fwqm8")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_1n7il"]
+resource_name = "Audio Volume"
+script = ExtResource("5_lhjss")
+bus_name = "Master"
+current = 75.0
+default = 80.0
+name = "Audio Volume"
+category = "Audio"
+icon = ExtResource("4_fwqm8")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na6bo"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r4t4"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhpoi"]
+bg_color = Color(1, 1, 1, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_grm14")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.47451, 0.0196078, 0.145098, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_atdtn")
+theme_override_font_sizes/font_size = 90
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Master Volume" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_w41os")]
+layout_mode = 2
+setting = SubResource("Resource_in650")
+apply_on_change = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Display" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Display"
+
+[node name="OptionList" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" instance=ExtResource("6_v8f16")]
+layout_mode = 2
+tooltip_text = "Display"
+setting = SubResource("Resource_1n7il")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Fullscreen" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Enable Fullscreen"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 100
+
+[node name="Back Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_atdtn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_na6bo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1r4t4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uhpoi")
+text = "Back
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rcwll")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/Back Button" to="." method="_on_back_button_pressed"]
+
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Slider"]
+[editable path="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/OptionList"]

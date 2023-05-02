@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmn14b2f6r4yu"]
+[gd_scene load_steps=7 format=3 uid="uid://coa10ovymugi4"]
 
 [ext_resource type="Script" path="res://TitleScreen/MainMenu.gd" id="1_5tehp"]
 [ext_resource type="PackedScene" uid="uid://egl6clxcvxbj" path="res://Map.tscn" id="2_k0bvg"]
-[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://MedievalSharp-Regular.ttf" id="3_qn50n"]
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Assets/MedievalSharp-Regular.ttf" id="3_lskhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_taxi5"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -25,18 +25,22 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_5tehp")
 MainGameScene = ExtResource("2_k0bvg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(0.47451, 0.0196078, 0.145098, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -48,7 +52,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_qn50n")
+theme_override_fonts/font = ExtResource("3_lskhd")
 theme_override_font_sizes/font_size = 130
 text = "Tutel"
 horizontal_alignment = 1
@@ -69,7 +73,7 @@ theme_override_constants/margin_right = 100
 [node name="New Game Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qn50n")
+theme_override_fonts/font = ExtResource("3_lskhd")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")
@@ -86,7 +90,7 @@ theme_override_constants/margin_right = 100
 [node name="Options Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qn50n")
+theme_override_fonts/font = ExtResource("3_lskhd")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")
@@ -103,12 +107,13 @@ theme_override_constants/margin_right = 100
 [node name="Quit Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qn50n")
+theme_override_fonts/font = ExtResource("3_lskhd")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_taxi5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2usw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_okxap")
 text = "Quit"
 
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="." method="_on_new_game_button_button_up"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options Button" to="." method="_on_options_button_button_up"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/New Game Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit Button" to="." method="_on_quit_button_pressed"]

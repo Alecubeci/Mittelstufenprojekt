@@ -1,5 +1,5 @@
+res://addons/ggs/plugin_data.tres
+res://Options/OptionMenu.tscn
+res://addons/ggs/editor/_theme/ggs_theme.tres
+res://game_settings/settings/display_fullscreen.gd
 res://TitleScreen/MainMenu.tscn
-res://Map.tscn
-res://Turret/Turret3/Turret3.tscn
-res://Turret/Turret2/Turret2.tscn
-res://Turret/turret.tscn
