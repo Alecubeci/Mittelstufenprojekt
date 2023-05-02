@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bql6ya0mpypyj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6i31e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6xdf"]
+albedo_color = Color(0.258824, 0.192157, 0.121569, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gflxr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ntyll"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_05742"]
+
+[node name="BasicTurret" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990651, -0.00994658)
+mesh = SubResource("CylinderMesh_6i31e")
+surface_material_override/0 = SubResource("StandardMaterial3D_b6xdf")
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.400605, 0, 0, 0, 0.5, 0, 2.39348, 0)
+mesh = SubResource("CylinderMesh_gflxr")
+metadata/_edit_group_ = true
+
+[node name="Barrel" type="MeshInstance3D" parent="Gun"]
+transform = Transform3D(-1.31134e-08, -1.015, 0, 0.3, -4.43671e-08, 0, 0, 0, 0.3, -1.02103, 0.310521, 0)
+mesh = SubResource("CylinderMesh_ntyll")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gun"]
+transform = Transform3D(2, 0, 0, 0, 2.49623, 0, 0, 0, 2, 7.13579, -5.97467, 11.6193)
+mesh = SubResource("BoxMesh_05742")
+skeleton = NodePath("../..")
