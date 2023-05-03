@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Tutel - Yet another TowerDefense"
+config/name="Tutel"
 config/description="Hier könnte Ihre Werbung stehen."
 run/main_scene="res://Game/TitleScreen/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")

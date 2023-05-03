@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3y1akfpxce2g"]
+[gd_scene load_steps=19 format=3 uid="uid://b3y1akfpxce2g"]
 
 [ext_resource type="Script" path="res://Game/Options/OptionMenu.gd" id="1_26o1y"]
 [ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf" id="1_atdtn"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="5_lhjss"]
 [ext_resource type="AudioStream" uid="uid://ceqynprl8fir2" path="res://Game/Assets/Music/A-Sinister-Power-Rising-GioeleFazzeri.mp3" id="6_rcwll"]
 [ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="6_v8f16"]
-[ext_resource type="Script" path="res://game_settings/components/_shared_scripts/binary_selection.gd" id="8_3ydt6"]
 [ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="8_e6uml"]
+[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="8_royqc"]
+[ext_resource type="Script" path="res://game_settings/settings/display_size.gd" id="9_bmu3t"]
 [ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="10_s64d3"]
 [ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="11_llbci"]
 
@@ -16,7 +17,7 @@
 resource_name = "Audio Volume"
 script = ExtResource("5_lhjss")
 bus_name = "Master"
-current = 17.0
+current = 22.0
 default = 75.0
 name = "Audio Volume"
 category = "Audio"
@@ -26,24 +27,24 @@ value_type = 3
 value_hint = 1
 value_hint_string = "0,100"
 
-[sub_resource type="Resource" id="Resource_1n7il"]
-resource_name = "Audio Volume"
-script = ExtResource("5_lhjss")
-bus_name = "Master"
-current = 17.0
-default = 80.0
-name = "Audio Volume"
-category = "Audio"
-icon = ExtResource("4_fwqm8")
-desc = "Change volume of a specific audio bus."
-value_type = 3
-value_hint = 1
-value_hint_string = "0,100"
+[sub_resource type="Resource" id="Resource_yk807"]
+resource_name = "window_size"
+script = ExtResource("9_bmu3t")
+sizes = Array[Vector2]([Vector2(640, 480), Vector2(800, 600), Vector2(1280, 720), Vector2(1366, 768)])
+current = 2
+default = 2
+name = "Window Size"
+category = "Display"
+icon = ExtResource("8_royqc")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = "640 x 480,800 x 600,1280 x 720,1366 x 768"
 
 [sub_resource type="Resource" id="Resource_apahk"]
 resource_name = "Fullscreen Mode"
 script = ExtResource("11_llbci")
-size_setting = "[NONE]"
+size_setting = "Window Size"
 current = true
 default = false
 name = "Fullscreen Mode"
@@ -148,8 +149,19 @@ text = "Display"
 
 [node name="OptionList" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" instance=ExtResource("6_v8f16")]
 layout_mode = 2
-tooltip_text = "Display"
-setting = SubResource("Resource_1n7il")
+setting = SubResource("Resource_yk807")
+apply_on_change = true
+
+[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/OptionList" index="0"]
+item_count = 4
+popup/item_0/text = "640x480"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1366x768"
+popup/item_3/id = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -161,12 +173,8 @@ text = "Enable Fullscreen"
 
 [node name="Checkbox" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("8_e6uml")]
 layout_mode = 2
-script = ExtResource("8_3ydt6")
 setting = SubResource("Resource_apahk")
 apply_on_change = true
-
-[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/Checkbox" index="0"]
-layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 86)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ggsPluginData" load_steps=25 format=3 uid="uid://dpk53al471l8m"]
+[gd_resource type="Resource" script_class="ggsPluginData" load_steps=26 format=3 uid="uid://dpk53al471l8m"]
 
 [ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_category.gd" id="1_etqds"]
 [ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_plugin_data.gd" id="1_wabe0"]
@@ -19,7 +19,7 @@
 resource_name = "Audio Volume"
 script = ExtResource("6_1skq7")
 bus_name = "Master"
-current = 17.0
+current = 22.0
 default = 75.0
 name = "Audio Volume"
 category = "Audio"
@@ -42,7 +42,7 @@ item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")
 resource_name = "Fullscreen Mode"
 script = ExtResource("8_fysof")
 size_setting = "[NONE]"
-current = true
+current = false
 default = false
 name = "Fullscreen Mode"
 category = "Display"
@@ -52,27 +52,29 @@ value_type = 1
 value_hint = 0
 value_hint_string = ""
 
+[sub_resource type="Resource" id="Resource_yk807"]
+resource_name = "window_size"
+script = ExtResource("12_lc5pt")
+sizes = Array[Vector2]([Vector2(640, 480), Vector2(800, 600), Vector2(1280, 720), Vector2(1366, 768)])
+current = 0
+default = null
+name = "Window Size"
+category = "Display"
+icon = ExtResource("11_4o13q")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = "640 x 480,800 x 600,1280 x 720,1366 x 768"
+
 [sub_resource type="Resource" id="Resource_j6avk"]
 resource_name = "Display"
 script = ExtResource("1_etqds")
 name = "Display"
 settings = {
-"Fullscreen Mode": SubResource("Resource_apahk")
+"Fullscreen Mode": SubResource("Resource_apahk"),
+"Window Size": SubResource("Resource_yk807")
 }
-item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_apahk")])
-
-[sub_resource type="Resource" id="Resource_t2a7j"]
-resource_name = "Fullscreen Mode"
-script = ExtResource("8_fysof")
-current = false
-default = false
-name = "Fullscreen Mode"
-category = ""
-icon = ExtResource("7_7ql1v")
-desc = "Toggle Fullscreen mode."
-value_type = 1
-value_hint = 0
-value_hint_string = ""
+item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_apahk"), SubResource("Resource_yk807")])
 
 [sub_resource type="Resource" id="Resource_g8btk"]
 resource_name = "Window Size"
@@ -86,6 +88,19 @@ icon = ExtResource("11_4o13q")
 desc = "Change window size by setting its width and height to specific values."
 value_type = 2
 value_hint = 2
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_t2a7j"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("8_fysof")
+current = false
+default = false
+name = "Fullscreen Mode"
+category = ""
+icon = ExtResource("7_7ql1v")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
 value_hint_string = ""
 
 [sub_resource type="Resource" id="Resource_ie27f"]
@@ -150,7 +165,7 @@ categories = {
 "Display": SubResource("Resource_j6avk")
 }
 category_order = Array[ExtResource("1_etqds")]([SubResource("Resource_5566n"), SubResource("Resource_j6avk")])
-recent_settings = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_t2a7j"), SubResource("Resource_g8btk"), SubResource("Resource_ie27f")])
+recent_settings = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_g8btk"), SubResource("Resource_t2a7j"), SubResource("Resource_ie27f")])
 setting_list_cache = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_3so4y"), SubResource("Resource_ie27f"), SubResource("Resource_t2a7j"), SubResource("Resource_u3x2c"), SubResource("Resource_g8btk"), SubResource("Resource_g8ej2")])
 dir_settings = "res://game_settings/settings"
 dir_components = "res://game_settings/components"
