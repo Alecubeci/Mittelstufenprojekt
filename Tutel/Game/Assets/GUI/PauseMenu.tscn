@@ -1,0 +1,487 @@
+[gd_scene load_steps=28 format=3 uid="uid://tfy5o734w2mp"]
+
+[ext_resource type="Script" path="res://Game/Assets/GUI/PauseMenu.gd" id="1_ht4c0"]
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf" id="2_agurx"]
+[ext_resource type="Script" path="res://Game/Assets/GUI/PauseMenuControl.gd" id="2_x1a2h"]
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="3_3iqop"]
+[ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="4_2y6x8"]
+[ext_resource type="Script" path="res://Game/Assets/GUI/OptionsPauseMenu.gd" id="4_44wh5"]
+[ext_resource type="Script" path="res://game_settings/settings/audio_mute.gd" id="5_7wsl4"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="6_gmh47"]
+[ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="7_qg3ly"]
+[ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="8_dp4lv"]
+[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="9_knvl8"]
+[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="10_856wu"]
+[ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="11_x2r6f"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="12_v3lh0"]
+[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="13_cy5qc"]
+[ext_resource type="Script" path="res://game_settings/settings/display_size.gd" id="14_5fxnq"]
+
+[sub_resource type="Resource" id="Resource_175be"]
+resource_name = "Audio Mute"
+script = ExtResource("5_7wsl4")
+bus_name = "Master"
+current = false
+default = false
+name = "Audio Mute"
+category = "Audio"
+icon = ExtResource("4_2y6x8")
+desc = "Toggle mute state of a specific audio bus."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_xr4lc"]
+resource_name = "master_volume"
+script = ExtResource("8_dp4lv")
+bus_name = "Master"
+current = 28.0
+default = 75.0
+name = "master_volume"
+category = "Audio"
+icon = ExtResource("7_qg3ly")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_ak5j0"]
+resource_name = "music_mute"
+script = ExtResource("5_7wsl4")
+bus_name = "Music"
+current = false
+default = false
+name = "music_mute"
+category = "Audio"
+icon = ExtResource("4_2y6x8")
+desc = "Toggle mute state of a specific audio bus."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_2xs6y"]
+resource_name = "music_volume"
+script = ExtResource("8_dp4lv")
+bus_name = "Music"
+current = 16.0
+default = 50.0
+name = "music_volume"
+category = "Audio"
+icon = ExtResource("7_qg3ly")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_uqpuj"]
+resource_name = "sfx_mute"
+script = ExtResource("5_7wsl4")
+bus_name = "SFX"
+current = false
+default = false
+name = "sfx_mute"
+category = "Audio"
+icon = ExtResource("4_2y6x8")
+desc = "Toggle mute state of a specific audio bus."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_nmxj1"]
+resource_name = "sfx_volume"
+script = ExtResource("8_dp4lv")
+bus_name = "SFX"
+current = 46.0
+default = 75.0
+name = "sfx_volume"
+category = "Audio"
+icon = ExtResource("7_qg3ly")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_xajjq"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("11_x2r6f")
+size_setting = "Window Size"
+current = true
+default = false
+name = "Fullscreen Mode"
+category = "Display"
+icon = ExtResource("10_856wu")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_xkvvl"]
+resource_name = "Window Size"
+script = ExtResource("14_5fxnq")
+sizes = Array[Vector2]([Vector2(640, 480), Vector2(800, 600), Vector2(1280, 720), Vector2(1366, 768)])
+current = 2
+default = 2
+name = "Window Size"
+category = "Display"
+icon = ExtResource("13_cy5qc")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = "640 x 480,800 x 600,1280 x 720,1366 x 768"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dupnm"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlvik"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ffhj"]
+bg_color = Color(1, 1, 1, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -300.0
+offset_right = 375.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ht4c0")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.352941)
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_x1a2h")
+
+[node name="Menu" type="CenterContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Menu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Menu/Menu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 90
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+
+[node name="ContinueButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options
+"
+
+[node name="QuitButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit to Menu"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_44wh5")
+
+[node name="CenterContainer" type="CenterContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="Options/CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 90
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="left" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Audio" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Audio"
+
+[node name="right" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Master Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Master Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="Switch" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("3_3iqop")]
+layout_mode = 2
+size_flags_horizontal = 8
+setting = SubResource("Resource_175be")
+apply_on_change = true
+
+[node name="Slider" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("6_gmh47")]
+layout_mode = 2
+size_flags_horizontal = 8
+setting = SubResource("Resource_xr4lc")
+apply_on_change = true
+
+[node name="Music" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Music Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="Switch" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("3_3iqop")]
+layout_mode = 2
+size_flags_horizontal = 8
+setting = SubResource("Resource_ak5j0")
+apply_on_change = true
+
+[node name="Slider" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("6_gmh47")]
+layout_mode = 2
+setting = SubResource("Resource_2xs6y")
+apply_on_change = true
+
+[node name="SFX" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "SFX Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="Switch" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("3_3iqop")]
+layout_mode = 2
+size_flags_horizontal = 8
+setting = SubResource("Resource_uqpuj")
+apply_on_change = true
+
+[node name="Slider" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("6_gmh47")]
+layout_mode = 2
+size_flags_horizontal = 8
+setting = SubResource("Resource_nmxj1")
+apply_on_change = true
+
+[node name="DisplayContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="left" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Display" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Display"
+
+[node name="right" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fullscreen" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Enable Fullscreen"
+
+[node name="Checkbox" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Fullscreen" instance=ExtResource("9_knvl8")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = SubResource("Resource_xajjq")
+apply_on_change = true
+
+[node name="Display Size" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Display Size" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Display Size"
+
+[node name="OptionList" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size" instance=ExtResource("12_v3lh0")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = SubResource("Resource_xkvvl")
+apply_on_change = true
+
+[node name="Btn" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList" index="0"]
+item_count = 4
+popup/item_0/text = "640x480"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1366x768"
+popup/item_3/id = 3
+
+[node name="41112" type="PopupMenu" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList/Btn" index="1"]
+item_count = 4
+item_0/text = "640x480"
+item_0/checkable = 2
+item_0/id = 0
+item_1/text = "800x600"
+item_1/checkable = 2
+item_1/id = 1
+item_2/text = "1280x720"
+item_2/checkable = 2
+item_2/id = 2
+item_3/text = "1366x768"
+item_3/checkable = 2
+item_3/id = 3
+
+[node name="17667" type="PopupMenu" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList/Btn" index="2"]
+item_count = 4
+item_0/text = "640x480"
+item_0/checkable = 2
+item_0/id = 0
+item_1/text = "800x600"
+item_1/checkable = 2
+item_1/id = 1
+item_2/text = "1280x720"
+item_2/checkable = 2
+item_2/id = 2
+item_3/text = "1366x768"
+item_3/checkable = 2
+item_3/id = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Back Button" type="Button" parent="Options/CenterContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dupnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qlvik")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6ffhj")
+text = "Back
+"
+
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/OptionsButton" to="Menu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/OptionsButton" to="Options" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Options/CenterContainer/VBoxContainer/MarginContainer3/Back Button" to="Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Options/CenterContainer/VBoxContainer/MarginContainer3/Back Button" to="Options" method="_on_back_button_pressed"]
+
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master/Switch"]
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master/Slider"]
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music/Switch"]
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music/Slider"]
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX/Switch"]
+[editable path="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX/Slider"]
+[editable path="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Fullscreen/Checkbox"]
+[editable path="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList"]
