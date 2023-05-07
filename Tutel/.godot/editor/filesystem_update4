@@ -1,12 +1,6 @@
 res://addons/ggs/plugin_data.tres
-res://Game/Assets/GUI/PauseMenu.tscn
-res://addons/ggs/editor/_theme/ggs_theme.tres
-res://game_settings/settings/display_fullscreen.gd
-res://game_settings/settings/display_size.gd
-res://Game/Assets/Weapons/Cartridge.gd
-res://Game/Assets/Weapons/GunControl.gd
-res://Game/Assets/Weapons/Pistol.gd
-res://game_settings/components/option_list/option_list.gd
-res://Game/TitleScreen/MainMenu.tscn
 res://Game/Options/OptionMenu.tscn
+res://addons/ggs/editor/_theme/ggs_theme.tres
+res://Game/TitleScreen/MainMenu.tscn
 res://Game/Assets/Map/Map.tscn
+res://Game/Assets/GUI/PauseMenu.tscn

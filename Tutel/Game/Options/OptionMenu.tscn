@@ -1,132 +1,135 @@
-[gd_scene load_steps=27 format=3 uid="uid://b3y1akfpxce2g"]
+[gd_scene load_steps=30 format=3 uid="uid://b3y1akfpxce2g"]
 
 [ext_resource type="Script" path="res://Game/Options/OptionMenu.gd" id="1_26o1y"]
 [ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf" id="1_atdtn"]
-[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="2_w41os"]
-[ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="4_fwqm8"]
-[ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="5_lhjss"]
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="3_a5a3g"]
+[ext_resource type="Script" path="res://game_settings/components/_shared_scripts/binary_selection.gd" id="4_c2j0n"]
+[ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="5_d6dfa"]
 [ext_resource type="AudioStream" uid="uid://ceqynprl8fir2" path="res://Game/Assets/Music/A-Sinister-Power-Rising-GioeleFazzeri.mp3" id="6_rcwll"]
-[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="6_slmfx"]
-[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="6_v8f16"]
-[ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="8_1o0gm"]
-[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="8_e6uml"]
-[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="8_royqc"]
-[ext_resource type="Script" path="res://game_settings/settings/audio_mute.gd" id="9_8rmia"]
-[ext_resource type="Script" path="res://game_settings/settings/display_size.gd" id="9_bmu3t"]
-[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="10_s64d3"]
-[ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="11_llbci"]
+[ext_resource type="Script" path="res://game_settings/settings/audio_mute.gd" id="6_s5qke"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="7_rk10w"]
+[ext_resource type="Script" path="res://game_settings/components/slider/slider.gd" id="8_nb4ht"]
+[ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="9_c4630"]
+[ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="10_bajsi"]
+[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="11_h1ukr"]
+[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="12_2le24"]
+[ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="13_8xfxr"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="14_chap3"]
+[ext_resource type="Script" path="res://game_settings/components/option_list/option_list.gd" id="15_to7cg"]
+[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="16_rb3kw"]
+[ext_resource type="Script" path="res://game_settings/settings/display_size.gd" id="17_2r784"]
 
-[sub_resource type="Resource" id="Resource_61k26"]
-resource_name = "Audio Mute"
-script = ExtResource("9_8rmia")
+[sub_resource type="Resource" id="Resource_guyw0"]
+resource_name = "MasterMute"
+script = ExtResource("6_s5qke")
 bus_name = "Master"
 current = false
 default = false
-name = "Audio Mute"
+name = "MasterMute"
 category = "Audio"
-icon = ExtResource("8_1o0gm")
+icon = ExtResource("5_d6dfa")
 desc = "Toggle mute state of a specific audio bus."
 value_type = 1
 value_hint = 0
 value_hint_string = ""
 
-[sub_resource type="Resource" id="Resource_in650"]
-resource_name = "master_volume"
-script = ExtResource("5_lhjss")
+[sub_resource type="Resource" id="Resource_dphr3"]
+resource_name = "MasterVolume"
+script = ExtResource("10_bajsi")
 bus_name = "Master"
-current = 28.0
-default = 75.0
-name = "master_volume"
+current = 23.0
+default = 25.0
+name = "MasterVolume"
 category = "Audio"
-icon = ExtResource("4_fwqm8")
+icon = ExtResource("9_c4630")
 desc = "Change volume of a specific audio bus."
 value_type = 3
 value_hint = 1
 value_hint_string = "0,100"
 
-[sub_resource type="Resource" id="Resource_8dg64"]
-resource_name = "music_mute"
-script = ExtResource("9_8rmia")
+[sub_resource type="Resource" id="Resource_70l2b"]
+resource_name = "MusicMute"
+script = ExtResource("6_s5qke")
 bus_name = "Music"
 current = false
 default = false
-name = "music_mute"
+name = "MusicMute"
 category = "Audio"
-icon = ExtResource("8_1o0gm")
+icon = ExtResource("5_d6dfa")
 desc = "Toggle mute state of a specific audio bus."
 value_type = 1
 value_hint = 0
 value_hint_string = ""
 
-[sub_resource type="Resource" id="Resource_5jq4q"]
-resource_name = "music_volume"
-script = ExtResource("5_lhjss")
+[sub_resource type="Resource" id="Resource_j5wyo"]
+resource_name = "MusicVolume"
+script = ExtResource("10_bajsi")
 bus_name = "Music"
-current = 16.0
-default = 50.0
-name = "music_volume"
+current = 10.0
+default = 10.0
+name = "MusicVolume"
 category = "Audio"
-icon = ExtResource("4_fwqm8")
+icon = ExtResource("9_c4630")
 desc = "Change volume of a specific audio bus."
 value_type = 3
 value_hint = 1
 value_hint_string = "0,100"
 
-[sub_resource type="Resource" id="Resource_3oqky"]
-resource_name = "sfx_mute"
-script = ExtResource("9_8rmia")
+[sub_resource type="Resource" id="Resource_op8fd"]
+resource_name = "SFXMute"
+script = ExtResource("6_s5qke")
 bus_name = "SFX"
 current = false
 default = false
-name = "sfx_mute"
+name = "SFXMute"
 category = "Audio"
-icon = ExtResource("8_1o0gm")
+icon = ExtResource("5_d6dfa")
 desc = "Toggle mute state of a specific audio bus."
 value_type = 1
 value_hint = 0
 value_hint_string = ""
 
-[sub_resource type="Resource" id="Resource_07ahy"]
-resource_name = "sfx_volume"
-script = ExtResource("5_lhjss")
+[sub_resource type="Resource" id="Resource_vrotx"]
+resource_name = "SFXVolume"
+script = ExtResource("10_bajsi")
 bus_name = "SFX"
-current = 46.0
-default = 75.0
-name = "sfx_volume"
+current = 42.617
+default = 42.617
+name = "SFXVolume"
 category = "Audio"
-icon = ExtResource("4_fwqm8")
+icon = ExtResource("9_c4630")
 desc = "Change volume of a specific audio bus."
 value_type = 3
 value_hint = 1
 value_hint_string = "0,100"
 
-[sub_resource type="Resource" id="Resource_apahk"]
+[sub_resource type="Resource" id="Resource_rjksc"]
 resource_name = "Fullscreen Mode"
-script = ExtResource("11_llbci")
-size_setting = "Window Size"
+script = ExtResource("13_8xfxr")
+size_setting = "[NONE]"
 current = true
-default = false
+default = true
 name = "Fullscreen Mode"
 category = "Display"
-icon = ExtResource("10_s64d3")
+icon = ExtResource("12_2le24")
 desc = "Toggle Fullscreen mode."
 value_type = 1
 value_hint = 0
 value_hint_string = ""
 
-[sub_resource type="Resource" id="Resource_yk807"]
+[sub_resource type="Resource" id="Resource_jyxyt"]
 resource_name = "Window Size"
-script = ExtResource("9_bmu3t")
-sizes = Array[Vector2]([Vector2(640, 480), Vector2(800, 600), Vector2(1280, 720), Vector2(1366, 768)])
+script = ExtResource("17_2r784")
+sizes = Array[Vector2]([Vector2(640, 480), Vector2(800, 600), Vector2(1280, 720)])
 current = 2
-default = null
+default = 2
 name = "Window Size"
 category = "Display"
-icon = ExtResource("8_royqc")
+icon = ExtResource("16_rb3kw")
 desc = "Change window size by setting its width and height to specific values."
 value_type = 2
 value_hint = 2
-value_hint_string = "640 x 480,800 x 600,1280 x 720,1366 x 768"
+value_hint_string = "640 x 480,800 x 600,1280 x 720"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na6bo"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -234,17 +237,26 @@ size_flags_horizontal = 10
 text = "Mute
 "
 
-[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("6_slmfx")]
+[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-size_flags_horizontal = 8
-setting = SubResource("Resource_61k26")
+script = ExtResource("4_c2j0n")
+setting = SubResource("Resource_guyw0")
 apply_on_change = true
 
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("2_w41os")]
+[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master/Switch" index="0"]
 layout_mode = 2
-size_flags_horizontal = 8
-setting = SubResource("Resource_in650")
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("7_rk10w")]
+layout_mode = 2
+script = ExtResource("8_nb4ht")
+setting = SubResource("Resource_dphr3")
 apply_on_change = true
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master/Slider" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer"]
 layout_mode = 2
@@ -260,16 +272,26 @@ size_flags_horizontal = 10
 text = "Mute
 "
 
-[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("6_slmfx")]
+[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-size_flags_horizontal = 8
-setting = SubResource("Resource_8dg64")
+script = ExtResource("4_c2j0n")
+setting = SubResource("Resource_70l2b")
 apply_on_change = true
 
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("2_w41os")]
+[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music/Switch" index="0"]
 layout_mode = 2
-setting = SubResource("Resource_5jq4q")
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("7_rk10w")]
+layout_mode = 2
+script = ExtResource("8_nb4ht")
+setting = SubResource("Resource_j5wyo")
 apply_on_change = true
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music/Slider" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer"]
 layout_mode = 2
@@ -285,17 +307,26 @@ size_flags_horizontal = 10
 text = "Mute
 "
 
-[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("6_slmfx")]
+[node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-size_flags_horizontal = 8
-setting = SubResource("Resource_3oqky")
+script = ExtResource("4_c2j0n")
+setting = SubResource("Resource_op8fd")
 apply_on_change = true
 
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("2_w41os")]
+[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX/Switch" index="0"]
 layout_mode = 2
-size_flags_horizontal = 8
-setting = SubResource("Resource_07ahy")
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("7_rk10w")]
+layout_mode = 2
+script = ExtResource("8_nb4ht")
+setting = SubResource("Resource_vrotx")
 apply_on_change = true
+
+[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX/Slider" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="DisplayContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -331,11 +362,14 @@ layout_mode = 2
 size_flags_horizontal = 2
 text = "Enable Fullscreen"
 
-[node name="Checkbox" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Fullscreen" instance=ExtResource("8_e6uml")]
+[node name="Checkbox" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Fullscreen" instance=ExtResource("11_h1ukr")]
 layout_mode = 2
-size_flags_horizontal = 10
-setting = SubResource("Resource_apahk")
+script = ExtResource("4_c2j0n")
+setting = SubResource("Resource_rjksc")
 apply_on_change = true
+
+[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Fullscreen/Checkbox" index="0"]
+layout_mode = 2
 
 [node name="Display Size" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer"]
 layout_mode = 2
@@ -345,22 +379,22 @@ layout_mode = 2
 size_flags_horizontal = 2
 text = "Display Size"
 
-[node name="OptionList" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Display Size" instance=ExtResource("6_v8f16")]
+[node name="OptionList" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Display Size" instance=ExtResource("14_chap3")]
 layout_mode = 2
-size_flags_horizontal = 10
-setting = SubResource("Resource_yk807")
+script = ExtResource("15_to7cg")
+setting = SubResource("Resource_jyxyt")
 apply_on_change = true
 
 [node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList" index="0"]
-item_count = 4
+layout_mode = 2
+item_count = 3
+selected = 2
 popup/item_0/text = "640x480"
 popup/item_0/id = 0
 popup/item_1/text = "800x600"
 popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
-popup/item_3/text = "1366x768"
-popup/item_3/id = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 86)
