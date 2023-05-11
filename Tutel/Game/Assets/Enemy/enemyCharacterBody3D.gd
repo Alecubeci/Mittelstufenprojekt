@@ -5,7 +5,6 @@ var SPEED = 5.0
 var map_generator = GenerateMap.new()
 var spawn_position = map_generator.path_start
 var path = map_generator.generate_map()
-var life = 3
 
 
 var target_position = Vector3(55, 0, 59)
@@ -29,14 +28,11 @@ func _physics_process(delta):
 	if distance > 0.1:  # Eine Toleranz, um zu verhindern, dass der Würfel über das Ziel hinausschießt
 		transform.origin += direction * SPEED * delta
 	else:
+		Life.reduce_life()
 		ziel_erreicht()
 
 func ziel_erreicht():
-	life = life -1
 	queue_free()
-	print(life)
-	if life <= 0:
-		print("Game Over")
 # Funktion, um die nächste Position auf dem Pfad zu finden
 #func find_next_path_position(current_pos: Vector3) -> Vector3:
 #	# Suchen Sie den nächsten Punkt auf dem Pfad, der der aktuellen Position am nächsten liegt

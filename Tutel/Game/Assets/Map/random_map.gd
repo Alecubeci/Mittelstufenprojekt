@@ -119,10 +119,23 @@ func generate_map():
 #	var enemy = get_node("Enemy")
 #	enemy.call_deferred("initialize_pathing")
 
-
+var i = 1
 func _on_SpawnTimer_timeout():
-	for _i in range(max_enemies_per_wave):
-		spawn_enemy()
+	if i < max_enemies_per_wave:
+		spawn_enemies()
+		i +=1
+		print(i)
+
+
+#func spawn_enemy_in_thread(_user_data: Variant) -> Variant:
+#	print("Jo")
+#	for _i in range(max_enemies_per_wave):
+#		call_deferred("spawn_enemy")
+#	return null
+func spawn_enemies():
+	spawn_enemy()
+	await get_tree().create_timer(3).timeout
+
 
 func spawn_enemy():
 	if enemy_scene:
@@ -131,3 +144,6 @@ func spawn_enemy():
 		enemy_instance.transform.origin = Vector3(path_start.x,2,path_start.z)
 	else:
 		print("Enemy scene not loaded:", enemy_scene)
+
+#func _exit_tree():
+#	spawn_thread.wait_to_finish()
