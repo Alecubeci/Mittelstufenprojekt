@@ -24,12 +24,17 @@ var map_data = []
 var path_start = Vector3(5, 0, 0)
 var path_end = Vector3(55, 0, 59)
 
+signal map_generated
 
-
+# WaveSpawning
+var enemy_scene = preload("res://Game/Assets/Enemy/enemy.tscn")
+var max_enemies_per_wave = 10
 
 func _ready():
+	$Spawntimer.connect("timeout", self._on_SpawnTimer_timeout)
 	# Erstelle die Karte
 	generate_map()
+
 
 func generate_map():
 	var path = [path_start]
@@ -105,3 +110,24 @@ func generate_map():
 			add_child(tile)
 			z += tile_size
 		y += 0.0  # Hält alle Tiles auf gleicher Höhe
+	emit_signal("map_generated")
+
+#func _on_map_generated():
+#	initialize_enemy_pathing()
+#
+#func initialize_enemy_pathing():
+#	var enemy = get_node("Enemy")
+#	enemy.call_deferred("initialize_pathing")
+
+
+func _on_SpawnTimer_timeout():
+	for _i in range(max_enemies_per_wave):
+		spawn_enemy()
+
+func spawn_enemy():
+	if enemy_scene:
+		var enemy_instance = enemy_scene.instantiate()
+		add_child(enemy_instance)
+		enemy_instance.transform.origin = Vector3(path_start.x,2,path_start.z)
+	else:
+		print("Enemy scene not loaded:", enemy_scene)

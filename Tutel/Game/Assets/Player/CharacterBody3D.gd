@@ -16,6 +16,7 @@ var param = PhysicsRayQueryParameters3D.new()
 func _ready():
 	#Spawnt den Character an genannter Positiond
 	transform.origin = spawn_position
+	
 
 
 func _physics_process(delta):

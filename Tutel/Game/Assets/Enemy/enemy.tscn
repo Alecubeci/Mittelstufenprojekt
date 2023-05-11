@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dckhx4u4lt8dg"]
 
 [ext_resource type="Script" path="res://Game/Assets/Enemy/enemy.gd" id="1_6iswp"]
-[ext_resource type="Script" path="res://Game/Assets/Enemy/enemyCharacterBody3D.gd" id="2_gbmub"]
+[ext_resource type="Script" path="res://Game/Assets/Enemy/enemyCharacterBody3D.gd" id="2_6n2jp"]
 [ext_resource type="PackedScene" uid="uid://3o341vagq421" path="res://Game/Assets/Enemy/stats.tscn" id="3_1bbqh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xkrfr"]
@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.133, 0)
 script = ExtResource("1_6iswp")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("2_gbmub")
+script = ExtResource("2_6n2jp")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
 

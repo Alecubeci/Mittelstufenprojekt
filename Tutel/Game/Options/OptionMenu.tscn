@@ -1,21 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://b3y1akfpxce2g"]
+[gd_scene load_steps=27 format=3 uid="uid://b3y1akfpxce2g"]
 
 [ext_resource type="Script" path="res://Game/Options/OptionMenu.gd" id="1_26o1y"]
 [ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Game/Assets/Fonts/MedievalSharp-Regular.ttf" id="1_atdtn"]
 [ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="3_a5a3g"]
-[ext_resource type="Script" path="res://game_settings/components/_shared_scripts/binary_selection.gd" id="4_c2j0n"]
 [ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="5_d6dfa"]
 [ext_resource type="AudioStream" uid="uid://ceqynprl8fir2" path="res://Game/Assets/Music/A-Sinister-Power-Rising-GioeleFazzeri.mp3" id="6_rcwll"]
 [ext_resource type="Script" path="res://game_settings/settings/audio_mute.gd" id="6_s5qke"]
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="7_rk10w"]
-[ext_resource type="Script" path="res://game_settings/components/slider/slider.gd" id="8_nb4ht"]
 [ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="9_c4630"]
 [ext_resource type="Script" path="res://game_settings/settings/audio_volume.gd" id="10_bajsi"]
 [ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="11_h1ukr"]
 [ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="12_2le24"]
 [ext_resource type="Script" path="res://game_settings/settings/display_fullscreen.gd" id="13_8xfxr"]
 [ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="14_chap3"]
-[ext_resource type="Script" path="res://game_settings/components/option_list/option_list.gd" id="15_to7cg"]
 [ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="16_rb3kw"]
 [ext_resource type="Script" path="res://game_settings/settings/display_size.gd" id="17_2r784"]
 
@@ -37,7 +34,7 @@ value_hint_string = ""
 resource_name = "MasterVolume"
 script = ExtResource("10_bajsi")
 bus_name = "Master"
-current = 23.0
+current = 25.0
 default = 25.0
 name = "MasterVolume"
 category = "Audio"
@@ -107,7 +104,7 @@ value_hint_string = "0,100"
 resource_name = "Fullscreen Mode"
 script = ExtResource("13_8xfxr")
 size_setting = "[NONE]"
-current = true
+current = false
 default = true
 name = "Fullscreen Mode"
 category = "Display"
@@ -239,24 +236,13 @@ text = "Mute
 
 [node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-script = ExtResource("4_c2j0n")
 setting = SubResource("Resource_guyw0")
 apply_on_change = true
 
-[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master/Switch" index="0"]
-layout_mode = 2
-
 [node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master" instance=ExtResource("7_rk10w")]
 layout_mode = 2
-script = ExtResource("8_nb4ht")
 setting = SubResource("Resource_dphr3")
 apply_on_change = true
-
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Master/Slider" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 
 [node name="Music" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer"]
 layout_mode = 2
@@ -274,24 +260,13 @@ text = "Mute
 
 [node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-script = ExtResource("4_c2j0n")
 setting = SubResource("Resource_70l2b")
 apply_on_change = true
 
-[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music/Switch" index="0"]
-layout_mode = 2
-
 [node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music" instance=ExtResource("7_rk10w")]
 layout_mode = 2
-script = ExtResource("8_nb4ht")
 setting = SubResource("Resource_j5wyo")
 apply_on_change = true
-
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/Music/Slider" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 
 [node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer"]
 layout_mode = 2
@@ -309,24 +284,13 @@ text = "Mute
 
 [node name="Switch" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("3_a5a3g")]
 layout_mode = 2
-script = ExtResource("4_c2j0n")
 setting = SubResource("Resource_op8fd")
 apply_on_change = true
 
-[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX/Switch" index="0"]
-layout_mode = 2
-
 [node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX" instance=ExtResource("7_rk10w")]
 layout_mode = 2
-script = ExtResource("8_nb4ht")
 setting = SubResource("Resource_vrotx")
 apply_on_change = true
-
-[node name="Slider" parent="MarginContainer/VBoxContainer/HBoxContainer/AudioContainer/VBoxContainer/SFX/Slider" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 
 [node name="DisplayContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -364,12 +328,8 @@ text = "Enable Fullscreen"
 
 [node name="Checkbox" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Fullscreen" instance=ExtResource("11_h1ukr")]
 layout_mode = 2
-script = ExtResource("4_c2j0n")
 setting = SubResource("Resource_rjksc")
 apply_on_change = true
-
-[node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Fullscreen/Checkbox" index="0"]
-layout_mode = 2
 
 [node name="Display Size" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer"]
 layout_mode = 2
@@ -381,12 +341,10 @@ text = "Display Size"
 
 [node name="OptionList" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Display Size" instance=ExtResource("14_chap3")]
 layout_mode = 2
-script = ExtResource("15_to7cg")
 setting = SubResource("Resource_jyxyt")
 apply_on_change = true
 
 [node name="Btn" parent="MarginContainer/VBoxContainer/HBoxContainer/DisplayContainer/VBoxContainer/Display Size/OptionList" index="0"]
-layout_mode = 2
 item_count = 3
 selected = 2
 popup/item_0/text = "640x480"
