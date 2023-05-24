@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://egl6clxcvxbj"]
+[gd_scene load_steps=13 format=3 uid="uid://egl6clxcvxbj"]
 
 [ext_resource type="PackedScene" uid="uid://cy2na347y2dj6" path="res://Game/Assets/Player/Player.tscn" id="1_atclo"]
 [ext_resource type="Script" path="res://Game/Assets/Map/random_map.gd" id="1_ms5tr"]
 [ext_resource type="PackedScene" uid="uid://bbh0b6hkvwgo7" path="res://Game/Assets/Turret/turret.tscn" id="2_a0c3p"]
 [ext_resource type="PackedScene" uid="uid://dckhx4u4lt8dg" path="res://Game/Assets/Enemy/enemy.tscn" id="3_etq38"]
 [ext_resource type="PackedScene" uid="uid://b2gfrn1dgdme" path="res://Game/Assets/GUI/GUI.tscn" id="5_nvmtr"]
+[ext_resource type="PackedScene" uid="uid://dk26qthjl38vv" path="res://Shop/Ui.tscn" id="6_xi75j"]
+[ext_resource type="Shader" path="res://Game/Assets/Map/Map.gdshader" id="7_g6hkk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ja37"]
 
@@ -13,9 +15,19 @@ albedo_color = Color(0.27451, 0.556863, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lspy1"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7bh6c"]
+render_priority = 0
+shader = ExtResource("7_g6hkk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ur34"]
+material = SubResource("ShaderMaterial_7bh6c")
+
 [node name="Node3D" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_ms5tr")
+
+[node name="MainCam" type="Camera3D" parent="."]
+transform = Transform3D(-1, -5.46605e-08, 6.82274e-08, 5.30657e-09, 0.741039, 0.671462, -8.72616e-08, 0.671462, -0.741039, 23.5233, 22.5701, -14.2936)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0684514, 0)
@@ -51,5 +63,16 @@ layer = 100
 [node name="Spawntimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Shop" parent="." instance=ExtResource("6_xi75j")]
+
+[node name="SelectionTool" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.48862, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SelectionTool"]
+mesh = SubResource("BoxMesh_3ur34")
+
+[node name="RayCast3D" type="RayCast3D" parent="SelectionTool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0413499, -0.0718632, 0)
 
 [connection signal="map_generated" from="." to="Enemy" method="_on_node_3d_map_generated"]

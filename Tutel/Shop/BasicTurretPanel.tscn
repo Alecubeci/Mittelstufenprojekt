@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1qbida5d8hv7"]
+
+[ext_resource type="Texture2D" uid="uid://buwbpr31iy8h8" path="res://icon.svg" id="1_jhjqq"]
+[ext_resource type="Script" path="res://Shop/BasicTurretPanel.gd" id="1_wx0bf"]
+
+[node name="BasicTurretPanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_wx0bf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40.5)
+scale = Vector2(0.156522, 0.158696)
+texture = ExtResource("1_jhjqq")

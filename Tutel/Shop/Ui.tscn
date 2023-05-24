@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk26qthjl38vv"]
+
+[ext_resource type="PackedScene" uid="uid://d1qbida5d8hv7" path="res://Shop/BasicTurretPanel.tscn" id="1_ru5i8"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -374.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 9.0
+offset_right = 176.0
+offset_bottom = 342.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="BasicTurretPanel" parent="Panel/FlowContainer" instance=ExtResource("1_ru5i8")]
+layout_mode = 2
+
+[node name="BasicTurretPanel2" parent="Panel/FlowContainer" instance=ExtResource("1_ru5i8")]
+layout_mode = 2

@@ -42,6 +42,7 @@ shape = SubResource("CapsuleShape3D_6gtr2")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 transform = Transform3D(0.999692, -0.0175599, 0.0175598, 4.21468e-08, 0.707107, 0.707107, -0.0248334, -0.706889, 0.706889, 0, 11, 10.7602)
+visible = false
 
 [node name="GunControl" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("3_5rvb2")

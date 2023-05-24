@@ -1,6 +1,13 @@
 res://addons/ggs/plugin_data.tres
-res://Game/Options/OptionMenu.tscn
+res://Game/Assets/Map/Map.tscn
 res://addons/ggs/editor/_theme/ggs_theme.tres
 res://Game/TitleScreen/MainMenu.tscn
-res://Game/Assets/Map/Map.tscn
-res://Game/Assets/GUI/PauseMenu.tscn
+res://Game/Options/OptionMenu.tscn
+res://Shop/Ui.tscn
+res://Shop/BasicTurretPanel.tscn
+res://Game/Assets/Turret/Turret2/Turret2.tscn
+res://Game/Assets/Turret/Turret3/Turret3.tscn
+res://Game/Assets/Player/Player.tscn
+res://Shop/ui.gd
+res://Game/Assets/Map/selectionTool.gdshader
+res://Game/Assets/Map/Map.gdshader
