@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://buito2br4fqhp"]
+
+[ext_resource type="Script" path="res://Scenes/MainScenes/GameScene.gd" id="1_wp1c4"]
+[ext_resource type="PackedScene" uid="uid://4b724f8nk0b8" path="res://Scenes/Maps/map_1.tscn" id="1_wrbdu"]
+[ext_resource type="PackedScene" uid="uid://c3kkyg5bp4lvk" path="res://Scenes/UI.tscn" id="2_008bh"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_wp1c4")
+
+[node name="Map1" parent="." instance=ExtResource("1_wrbdu")]
+
+[node name="UI" parent="." instance=ExtResource("2_008bh")]

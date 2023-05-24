@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd3v37qmadlgt"]
+
+[ext_resource type="Script" path="res://Scenes/Turrets/GunT1Panel.gd" id="1_daefe"]
+[ext_resource type="Texture2D" uid="uid://47gvphdhbwdq" path="res://Assets/Towers/towerDefense_tile250.png" id="2_x3evk"]
+
+[node name="GunT2Panel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_daefe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(1.23, 1.25)
+texture = ExtResource("2_x3evk")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

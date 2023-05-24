@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dis3gmki2s7hc"]
+
+[ext_resource type="Script" path="res://Scenes/Turrets/MissileT1.gd" id="1_41b6v"]
+[ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="1_kp7ha"]
+[ext_resource type="Texture2D" uid="uid://cqv700amogi0y" path="res://Assets/Towers/towerDefense_tile228.png" id="2_rfyj1"]
+[ext_resource type="Texture2D" uid="uid://vw8kpocxwgkv" path="res://Assets/Towers/towerDefense_tile251.png" id="3_l26ov"]
+
+[node name="Missile" type="Node2D"]
+script = ExtResource("1_41b6v")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_kp7ha")
+
+[node name="Turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_rfyj1")
+
+[node name="Missile1" type="Sprite2D" parent="Turret"]
+position = Vector2(5, -10)
+texture = ExtResource("3_l26ov")
+
+[node name="Missile2" type="Sprite2D" parent="Turret"]
+position = Vector2(5, 10)
+texture = ExtResource("3_l26ov")
