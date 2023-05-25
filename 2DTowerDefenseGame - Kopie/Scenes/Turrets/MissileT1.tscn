@@ -1,12 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dis3gmki2s7hc"]
+[gd_scene load_steps=8 format=3 uid="uid://dis3gmki2s7hc"]
 
 [ext_resource type="Script" path="res://Scenes/Turrets/MissileT1.gd" id="1_41b6v"]
 [ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="1_kp7ha"]
 [ext_resource type="Texture2D" uid="uid://cqv700amogi0y" path="res://Assets/Towers/towerDefense_tile228.png" id="2_rfyj1"]
 [ext_resource type="Texture2D" uid="uid://vw8kpocxwgkv" path="res://Assets/Towers/towerDefense_tile251.png" id="3_l26ov"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxgne"]
+size = Vector2(53, 52)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nq4eq"]
+radius = 200.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kov80"]
+bg_color = Color(1, 0, 0, 0.458824)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
 [node name="Missile" type="Node2D"]
 script = ExtResource("1_41b6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_gxgne")
 
 [node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource("1_kp7ha")
@@ -21,3 +38,15 @@ texture = ExtResource("3_l26ov")
 [node name="Missile2" type="Sprite2D" parent="Turret"]
 position = Vector2(5, 10)
 texture = ExtResource("3_l26ov")
+
+[node name="circle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="circle"]
+shape = SubResource("CircleShape2D_nq4eq")
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kov80")

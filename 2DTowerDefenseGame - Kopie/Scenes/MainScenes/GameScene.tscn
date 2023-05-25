@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://buito2br4fqhp"]
+[gd_scene load_steps=6 format=3 uid="uid://buito2br4fqhp"]
 
 [ext_resource type="Script" path="res://Scenes/MainScenes/GameScene.gd" id="1_wp1c4"]
 [ext_resource type="PackedScene" uid="uid://4b724f8nk0b8" path="res://Scenes/Maps/map_1.tscn" id="1_wrbdu"]
-[ext_resource type="PackedScene" uid="uid://c3kkyg5bp4lvk" path="res://Scenes/UI.tscn" id="2_008bh"]
+[ext_resource type="PackedScene" path="res://Scenes/UI.tscn" id="2_008bh"]
+[ext_resource type="PackedScene" uid="uid://ri8bgluum85n" path="res://Scenes/Enemies/EnemyAtscn.tscn" id="4_wlmtn"]
+
+[sub_resource type="Curve2D" id="Curve2D_4kkl6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 18, 93, 0, 0, 0, 0, 90, 97, 0, 0, 0, 0, 180, 97, 0, 0, 0, 0, 271, 96, 0, 0, 0, 0, 328, 96, 0, 0, 0, 0, 349, 115, 0, 0, 0, 0, 363, 150, 0, 0, 0, 0, 394, 156, 0, 0, 0, 0, 451, 159, 0, 0, 0, 0, 503, 159, 0, 0, 0, 0, 557, 159, 0, 0, 0, 0, 592, 156, 0, 0, 0, 0, 610, 130, 0, 0, 0, 0, 626, 102, 0, 0, 0, 0, 676, 99, 0, 0, 0, 0, 737, 96, 0, 0, 0, 0, 956, 97, 0, 0, 0, 0, 981, 103, 0, 0, 0, 0, 995, 138, 0, 0, 0, 0, 1016, 162, 0, 0, 0, 0, 1046, 165, 0, 0, 0, 0, 1055, 210, 0, 0, 0, 0, 1053, 460, 0, 0, 0, 0, 1025, 478, 0, 0, 0, 0, 975, 479, 0, 0, 0, 0, 933, 463, 0, 0, 0, 0, 923, 424, 0, 0, 0, 0, 877, 409, 0, 0, 0, 0, 841, 413, 0, 0, 0, 0, 806, 400, 0, 0, 0, 0, 799, 358, 0, 0, 0, 0, 799, 314, 0, 0, 0, 0, 784, 287, 0, 0, 0, 0, 734, 286, 0, 0, 0, 0, 491, 289, 0, 0, 0, 0, 481, 323, 0, 0, 0, 0, 479, 362, 0, 0, 0, 0, 479, 455, 0, 0, 0, 0, 464, 478, 0, 0, 0, 0, 303, 479, 0, 0, 0, 0, 291, 455, 0, 0, 0, 0, 286, 305, 0, 0, 0, 0, 259, 286, 0, 0, 0, 0, 45, 289, 0, 0, 0, 0, 33, 310, 0, 0, 0, 0, 34, 587, 0, 0, 0, 0, 48, 608, 0, 0, 0, 0, 84, 607, 0, 0, 0, 0, 93, 640, 0, 0, 0, 0, 106, 662, 0, 0, 0, 0, 208, 674, 0, 0, 0, 0, 1158, 668, 0, 0, 0, 0, 1184, 661, 0, 0, 0, 0, 1182, 620, 0, 0, 0, 0, 1232, 598, 0, 0, 0, 0, 1253, 560, 0, 0, 0, 0, 1242, 359, 0, 0, 0, 0, 1209, 352, 0, 0, 0, 0, 1188, 328, 0, 0, 0, 0, 1182, 48, 0, 0, 0, 0, 1148, 36, 0, 0, 0, 0, 1067, 25, 0, 0, 0, 0, 1053, -14, 0, 0, 0, 0, 1052, -62)
+}
+point_count = 64
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_wp1c4")
@@ -10,3 +17,12 @@ script = ExtResource("1_wp1c4")
 [node name="Map1" parent="." instance=ExtResource("1_wrbdu")]
 
 [node name="UI" parent="." instance=ExtResource("2_008bh")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4kkl6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(18, 93)
+rotation = 0.0554985
+
+[node name="EnemyA" parent="Path2D/PathFollow2D" instance=ExtResource("4_wlmtn")]
