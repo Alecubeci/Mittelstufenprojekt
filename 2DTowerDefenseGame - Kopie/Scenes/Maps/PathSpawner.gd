@@ -5,4 +5,4 @@ extends Node2D
 func _on_timer_timeout():
 	var tempPath = path.instantiate()
 	add_child(tempPath)
-	
+

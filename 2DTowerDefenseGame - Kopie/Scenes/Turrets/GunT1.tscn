@@ -4,48 +4,50 @@
 [ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="1_s6c6c"]
 [ext_resource type="Texture2D" uid="uid://bnvo22h1v0k21" path="res://Assets/Towers/towerDefense_tile249.png" id="2_agy16"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_015mh"]
-size = Vector2(59, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n08y0"]
+size = Vector2(42, 42)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0vvv5"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxc3d"]
 radius = 100.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbr5k"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrgq"]
 bg_color = Color(1, 0, 0, 0.458824)
 corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
 
-[node name="GunT1" type="Node2D"]
+[node name="GunT1" type="StaticBody2D"]
 script = ExtResource("1_78lcf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, 0)
-shape = SubResource("RectangleShape2D_015mh")
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_n08y0")
 
-[node name="Base" type="Sprite2D" parent="."]
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_dxc3d")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TowerDefenseTile180" type="Sprite2D" parent="."]
 texture = ExtResource("1_s6c6c")
 
-[node name="Turret" type="Sprite2D" parent="."]
+[node name="TowerDefenseTile249" type="Sprite2D" parent="."]
+rotation = 6.28319
 texture = ExtResource("2_agy16")
 offset = Vector2(12, 0)
 
-[node name="Muzzle" type="Marker2D" parent="Turret"]
-position = Vector2(43, 0)
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_0vvv5")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
 [node name="Area" type="Panel" parent="."]
-modulate = Color(0, 0, 0, 0.313726)
 offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dbr5k")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lrgq")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
