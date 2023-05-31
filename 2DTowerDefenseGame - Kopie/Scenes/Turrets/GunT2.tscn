@@ -17,7 +17,7 @@ corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
 
-[node name="GunT2" type="Node2D"]
+[node name="GunT2" type="StaticBody2D"]
 script = ExtResource("1_5ce6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,19 +31,21 @@ texture = ExtResource("1_nb4ko")
 texture = ExtResource("2_m7ot1")
 offset = Vector2(10, 0)
 
-[node name="Muzzle1" type="Marker2D" parent="Turret"]
+[node name="Aim1" type="Marker2D" parent="Turret"]
 position = Vector2(41, 6)
 
-[node name="Muzzle2" type="Marker2D" parent="Turret"]
+[node name="Aim2" type="Marker2D" parent="Turret"]
 position = Vector2(41, -6)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_5xgcp")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Area" type="Panel" parent="."]
+visible = false
 offset_left = -150.0
 offset_top = -150.0
 offset_right = 150.0
