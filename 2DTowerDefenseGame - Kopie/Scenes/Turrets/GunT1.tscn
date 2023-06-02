@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5bldrb3pbrtu"]
+[gd_scene load_steps=8 format=3 uid="uid://b5bldrb3pbrtu"]
 
 [ext_resource type="Script" path="res://Scenes/Turrets/GunT1.gd" id="1_78lcf"]
 [ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="1_s6c6c"]
@@ -9,6 +9,9 @@ size = Vector2(42, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dxc3d"]
 radius = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emo3a"]
+size = Vector2(72, 64)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrgq"]
 bg_color = Color(1, 0, 0, 0.458824)
@@ -33,6 +36,16 @@ position = Vector2(40, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_dxc3d")
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
+process_mode = 3
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_emo3a")
 
 [node name="TowerDefenseTile180" type="Sprite2D" parent="."]
 texture = ExtResource("1_s6c6c")
