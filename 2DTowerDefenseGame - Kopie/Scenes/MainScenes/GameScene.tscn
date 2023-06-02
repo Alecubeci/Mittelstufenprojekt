@@ -19,10 +19,19 @@ autostart = true
 [node name="UI" parent="." instance=ExtResource("2_008bh")]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
-self_modulate = Color(0, 0, 0, 0.470588)
+self_modulate = Color(0, 0, 0, 0)
 custom_minimum_size = Vector2(0, 60)
-offset_right = 501.0
-offset_bottom = 51.0
+offset_right = 1281.0
+offset_bottom = 68.0
+
+[node name="MoneyCount" type="Label" parent="UI/ColorRect"]
+custom_minimum_size = Vector2(50, 60)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 60.0
+text = "50000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Dolar" type="Label" parent="UI/ColorRect"]
 custom_minimum_size = Vector2(45, 60)
@@ -31,15 +40,6 @@ offset_left = 50.0
 offset_right = 100.0
 offset_bottom = 60.0
 text = "$"
-vertical_alignment = 1
-
-[node name="MoneyCount" type="Label" parent="UI/ColorRect"]
-custom_minimum_size = Vector2(50, 60)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "50000"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI/ColorRect"]

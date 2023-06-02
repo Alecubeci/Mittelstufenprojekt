@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://i64aqnyyxlej"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://ri8bgluum85n" path="res://Scenes/Enemies/EnemyAtscn.tscn" id="1_omp6r"]
+[ext_resource type="PackedScene" uid="uid://dkjae43hyfopf" path="res://Scenes/EnemyTankBlue.tscn" id="2_6t2th"]
 
 [sub_resource type="Curve2D" id="Curve2D_dq1ii"]
 _data = {
@@ -15,4 +15,4 @@ curve = SubResource("Curve2D_dq1ii")
 position = Vector2(-17, 94)
 rotation = 0.00593465
 
-[node name="EnemyA" parent="PathFollow2D" instance=ExtResource("1_omp6r")]
+[node name="BlueTank" parent="PathFollow2D" instance=ExtResource("2_6t2th")]

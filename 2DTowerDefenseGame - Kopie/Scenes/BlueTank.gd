@@ -1,6 +1,6 @@
-extends CharacterBody2D
+extends PathFollow2D
 
-@export var speed = 100
+var speed = 100
 var health = 15
 @onready var healthBar = get_node("HealthBar")
 
@@ -14,3 +14,4 @@ func _process(delta):
 		get_parent().get_parent().queue_free()
 		
 	healthBar.position = position - Vector2(30, 30)
+
