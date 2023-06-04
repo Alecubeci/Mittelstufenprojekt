@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh5526kvl1qy3"]
+[gd_scene load_steps=7 format=3 uid="uid://dh5526kvl1qy3"]
 
 [ext_resource type="PackedScene" uid="uid://buij0dsochi43" path="res://Scenes/Turrets/GunT1Panel.tscn" id="1_76yfq"]
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="1_xp5p8"]
 [ext_resource type="PackedScene" uid="uid://bd3v37qmadlgt" path="res://Scenes/Turrets/MissilePanel.tscn" id="2_35yv8"]
 [ext_resource type="Script" path="res://Scenes/Turrets/GunT2Panel.gd" id="4_j6ib8"]
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="4_vlbfd"]
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="5_c8hri"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_xp5p8")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 1172.0
@@ -45,10 +47,9 @@ text = "Health:"
 script = ExtResource("4_vlbfd")
 
 [node name="Gold" type="Label" parent="."]
-offset_left = 320.0
-offset_top = -1.0
-offset_right = 482.0
-offset_bottom = 71.0
+offset_left = 277.0
+offset_right = 439.0
+offset_bottom = 72.0
 theme_override_font_sizes/font_size = 50
 text = "Gold:"
 script = ExtResource("5_c8hri")

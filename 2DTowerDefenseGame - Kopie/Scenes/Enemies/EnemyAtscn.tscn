@@ -13,11 +13,11 @@ bg_color = Color(0.356863, 0.647059, 0, 1)
 script/source = "extends ProgressBar
 
 func _ready():
-	self.max_value = get_parent().health
+	self.max_value = get_parent().hp
 #	self.set_as_top_level(true)
 	
 func _process(delta):
-	self.value = get_parent().health
+	self.value = get_parent().hp
 	
 "
 
