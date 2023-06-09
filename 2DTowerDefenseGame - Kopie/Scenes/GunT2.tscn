@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://duocuqlvfcq5w"]
+
+[ext_resource type="Script" path="res://Scenes/GunT2.gd" id="1_jnh7k"]
+[ext_resource type="Texture2D" uid="uid://bpumkjrkvkseh" path="res://Assets/Towers/towerDefense_tile181.png" id="1_o1qf6"]
+[ext_resource type="Texture2D" uid="uid://47gvphdhbwdq" path="res://Assets/Towers/towerDefense_tile250.png" id="2_mypvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a38tm"]
+size = Vector2(54, 52)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynb3h"]
+radius = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1icdb"]
+bg_color = Color(1, 0, 0, 0.458824)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6ns4"]
+size = Vector2(72, 64)
+
+[node name="GunT2" type="StaticBody2D"]
+script = ExtResource("1_jnh7k")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_o1qf6")
+
+[node name="Turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_mypvw")
+offset = Vector2(10, 0)
+
+[node name="Aim" type="Marker2D" parent="Turret"]
+position = Vector2(43, -6)
+
+[node name="Muzzle2" type="Marker2D" parent="Turret"]
+position = Vector2(43, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_a38tm")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_ynb3h")
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1icdb")
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
+process_mode = 3
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_f6ns4")

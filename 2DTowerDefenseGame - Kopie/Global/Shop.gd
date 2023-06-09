@@ -1,10 +1,31 @@
 extends Panel
 
-@onready var tower = preload("res://Scenes/Turrets/GunT1.tscn")
+@onready var gunT1 = preload("res://Scenes/Turrets/Tower+Bullets/GunT1.tscn") 
+@onready var missleT1 = preload("res://Scenes/Turrets/Tower+Bullets/MissileT1.tscn")
+
+@onready var tower 
+
+var price 
 var currTile
 
+func detectTowerType(event):
+	
+	if name == "Gun":
+		tower = gunT1
+		price = 15
+		print(name)
+		
+	else:
+		tower = missleT1
+		price = 25
+		print(name)
+		
+	
+
+
+
 func _on_gui_input(event):
-	if Game.gold >= 10:
+	if Game.gold >= 15:
 		var tempTower = tower.instantiate()
 		if event is InputEventMouseButton and event.button_mask == 1:
 			
@@ -44,12 +65,12 @@ func _on_gui_input(event):
 					get_child(1).queue_free()
 				else:
 					var path = get_tree().get_root().get_node("GameScene")
-					var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
-					if targets.size() < 1:
-						path.add_child(tempTower)
-						tempTower.global_position = event.global_position
-						tempTower.get_node("Area").hide()
-						Game.gold -= 10
+#					var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
+#					if targets.size() < 1:
+					path.add_child(tempTower)
+					tempTower.global_position = event.global_position
+					tempTower.get_node("Area").hide()
+					Game.gold -= price
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()

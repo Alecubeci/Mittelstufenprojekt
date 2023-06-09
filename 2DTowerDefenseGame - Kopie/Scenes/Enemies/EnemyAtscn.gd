@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 100
+@export var speed = 150
 var hp = 15
 @onready var healthBar = get_node("HealthBar")
 

@@ -1,21 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf6fth0hlcjcd"]
 
-[ext_resource type="Texture2D" uid="uid://tp24n6t6bfdr" path="res://Assets/Towers/bulletRed1.png" id="1_6ovvd"]
-[ext_resource type="Script" path="res://Scenes/Turrets/Gun1Bullet.gd" id="1_bkc7y"]
+[ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.gd" id="1_awhi0"]
+[ext_resource type="Texture2D" uid="uid://tp24n6t6bfdr" path="res://Assets/Towers/bulletRed1.png" id="2_0bxyg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftd8s"]
-radius = 2.0
-height = 12.0
+radius = 6.0
+height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4j5ak"]
-radius = 3.0
-height = 14.0
+radius = 8.00001
+height = 44.0
 
 [node name="Gun1Bullet" type="CharacterBody2D"]
-script = ExtResource("1_bkc7y")
+script = ExtResource("1_awhi0")
 
 [node name="BulletDark1" type="Sprite2D" parent="."]
-texture = ExtResource("1_6ovvd")
+texture = ExtResource("2_0bxyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

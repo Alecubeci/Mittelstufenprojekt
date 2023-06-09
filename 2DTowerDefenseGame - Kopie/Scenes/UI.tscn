@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh5526kvl1qy3"]
+[gd_scene load_steps=7 format=3 uid="uid://colph8p75hks6"]
 
-[ext_resource type="PackedScene" uid="uid://buij0dsochi43" path="res://Scenes/Turrets/GunT1Panel.tscn" id="1_76yfq"]
+[ext_resource type="PackedScene" uid="uid://dgjwo6vb6gp7x" path="res://Scenes/Turrets/Panels/GunT1Panel.tscn" id="1_76yfq"]
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="1_xp5p8"]
-[ext_resource type="PackedScene" uid="uid://bd3v37qmadlgt" path="res://Scenes/Turrets/MissilePanel.tscn" id="2_35yv8"]
-[ext_resource type="Script" path="res://Scenes/Turrets/GunT2Panel.gd" id="4_j6ib8"]
+[ext_resource type="PackedScene" uid="uid://dhlqh1eu4mp3f" path="res://Scenes/Turrets/Panels/MissilePanel.tscn" id="2_35yv8"]
+[ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/GunT2Panel.gd" id="4_j6ib8"]
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="4_vlbfd"]
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="5_c8hri"]
 
@@ -32,10 +32,10 @@ grow_vertical = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="GunT1Panel" parent="Panel/FlowContainer" groups=["build_button"] instance=ExtResource("1_76yfq")]
+[node name="Gun" parent="Panel/FlowContainer" groups=["build_button"] instance=ExtResource("1_76yfq")]
 layout_mode = 2
 
-[node name="GunT2Panel" parent="Panel/FlowContainer" groups=["build_button"] instance=ExtResource("2_35yv8")]
+[node name="Missile" parent="Panel/FlowContainer" groups=["build_button"] instance=ExtResource("2_35yv8")]
 layout_mode = 2
 script = ExtResource("4_j6ib8")
 

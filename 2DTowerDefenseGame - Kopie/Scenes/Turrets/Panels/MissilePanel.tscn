@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhlqh1eu4mp3f"]
+
+[ext_resource type="Script" path="res://Scenes/Turrets/Panels/MissilePanel.gd" id="1_doi5w"]
+[ext_resource type="Texture2D" uid="uid://vw8kpocxwgkv" path="res://Assets/Towers/towerDefense_tile251.png" id="2_142jo"]
+[ext_resource type="Texture2D" uid="uid://bsr2pjq4c6dyi" path="res://Assets/Icons/Gold.png" id="3_snv62"]
+
+[node name="MissilePanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_doi5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(1.23, 1.25)
+texture = ExtResource("2_142jo")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = 0.813011
+offset_top = 10.4
+offset_right = 19.813
+offset_bottom = 36.4
+text = "25
+"
+
+[node name="Gold" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(26.0163, 24)
+scale = Vector2(0.231344, 0.224)
+texture = ExtResource("3_snv62")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

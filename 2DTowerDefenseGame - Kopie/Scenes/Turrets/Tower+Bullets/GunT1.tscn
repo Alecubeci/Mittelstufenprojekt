@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5bldrb3pbrtu"]
 
-[ext_resource type="Script" path="res://Scenes/Turrets/GunT1.gd" id="1_78lcf"]
-[ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="1_s6c6c"]
-[ext_resource type="Texture2D" uid="uid://bnvo22h1v0k21" path="res://Assets/Towers/towerDefense_tile249.png" id="2_agy16"]
+[ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/GunT1.gd" id="1_16qqr"]
+[ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="2_eqhn3"]
+[ext_resource type="Texture2D" uid="uid://bnvo22h1v0k21" path="res://Assets/Towers/towerDefense_tile249.png" id="3_hhinw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n08y0"]
-size = Vector2(42, 42)
+size = Vector2(48, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dxc3d"]
 radius = 100.0
@@ -23,10 +23,9 @@ corner_radius_bottom_left = 450
 [node name="GunT1" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_78lcf")
+script = ExtResource("1_16qqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 0)
 shape = SubResource("RectangleShape2D_n08y0")
 
 [node name="Aim" type="Marker2D" parent="."]
@@ -48,10 +47,10 @@ position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_emo3a")
 
 [node name="TowerDefenseTile180" type="Sprite2D" parent="."]
-texture = ExtResource("1_s6c6c")
+texture = ExtResource("2_eqhn3")
 
 [node name="TowerDefenseTile249" type="Sprite2D" parent="."]
-texture = ExtResource("2_agy16")
+texture = ExtResource("3_hhinw")
 offset = Vector2(12, 0)
 
 [node name="Area" type="Panel" parent="."]
