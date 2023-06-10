@@ -1,10 +1,20 @@
 extends StaticBody2D
 
-var bullet = preload("res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.tscn")
+var bulletGun = preload("res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.tscn")
+var bulletMissile = preload("res://Scenes/Turrets/Tower+Bullets/MissileBulletT1.tscn")
+
+var bullet = bulletGun
 var bulletDamage = 5
 var pathName
 var currTarget = []
 var curr
+
+#func whichBullet():
+#	if Game.tower == "res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.tscn":
+#bullet = 
+#	elif Game.tower == "res://Scenes/Turrets/Tower+Bullets/Missile":
+#		bullet = bulletMissile
+
 
 @onready var timer = get_node("Timer")
 var startShooting = false
@@ -20,6 +30,7 @@ func _process(delta):
 			
 
 func shoot():
+#	whichBullet()
 	var tempBullet = bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage

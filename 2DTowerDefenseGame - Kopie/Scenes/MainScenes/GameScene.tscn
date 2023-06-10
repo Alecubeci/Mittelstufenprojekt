@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buito2br4fqhp"]
+[gd_scene load_steps=13 format=3 uid="uid://cqhy85gaigive"]
 
 [ext_resource type="Script" path="res://Scenes/MainScenes/GameScene.gd" id="1_wp1c4"]
 [ext_resource type="PackedScene" uid="uid://4b724f8nk0b8" path="res://Scenes/Maps/map_1.tscn" id="1_wrbdu"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dgjwo6vb6gp7x" path="res://Scenes/Turrets/Panels/GunT1Panel.tscn" id="4_xvahp"]
 [ext_resource type="Texture2D" uid="uid://bhqbi7esoiin8" path="res://Assets/Icons/right.png" id="5_178wv"]
 [ext_resource type="PackedScene" uid="uid://dhlqh1eu4mp3f" path="res://Scenes/Turrets/Panels/MissilePanel.tscn" id="5_txnp2"]
-[ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/GunT2Panel.gd" id="6_3ggjs"]
 [ext_resource type="Texture2D" uid="uid://i7iugggxr1lv" path="res://Assets/Icons/pause.png" id="6_e7qyw"]
+[ext_resource type="Script" path="res://Scenes/Turrets/Panels/GunT2Panel.gd" id="6_q6a3h"]
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="7_00j71"]
 [ext_resource type="Texture2D" uid="uid://dmyo8sjx58mjo" path="res://Assets/Icons/rewind.png" id="7_cdd58"]
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="8_r0hbg"]
@@ -48,7 +48,7 @@ layout_mode = 2
 
 [node name="Missile" parent="Map1/UI/HUD/Buildbar" groups=["build_button"] instance=ExtResource("5_txnp2")]
 layout_mode = 2
-script = ExtResource("6_3ggjs")
+script = ExtResource("6_q6a3h")
 
 [node name="Health" type="Label" parent="Map1/UI"]
 offset_right = 40.0

@@ -1,4 +1,4 @@
-extends Panel
+extends "res://Global/Shop.gd"
 
 
-preload("res://Scenes/Turrets/MissileT1.tscn")
+

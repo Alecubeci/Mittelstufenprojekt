@@ -1,11 +1,29 @@
-extends Node
+extends CharacterBody2D
+
+var target
+var speed = 500
+var pathName = ""
+var bulletDamage
+
+func _physics_process(delta):
+	
+	var pathSpawnerNode = get_tree().get_root().get_node("GameScene/PathSpawner")
+	
+	for i in  pathSpawnerNode.get_child_count():
+		if pathSpawnerNode.get_child(i).name == pathName:
+			target = pathSpawnerNode.get_child(i).get_child(0).get_child(0).global_position
+			
+	velocity = global_position.direction_to(target) * speed
+	
+	look_at(target)
+	
+	move_and_slide()
+	
+	
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_area_2d_body_entered(body):
+	if "EnemyA" in body.name:
+		body.hp -= bulletDamage
+		queue_free()
+		

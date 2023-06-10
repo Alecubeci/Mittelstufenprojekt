@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://colph8p75hks6"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="PackedScene" uid="uid://dgjwo6vb6gp7x" path="res://Scenes/Turrets/Panels/GunT1Panel.tscn" id="1_76yfq"]
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="1_xp5p8"]
 [ext_resource type="PackedScene" uid="uid://dhlqh1eu4mp3f" path="res://Scenes/Turrets/Panels/MissilePanel.tscn" id="2_35yv8"]
-[ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/GunT2Panel.gd" id="4_j6ib8"]
+[ext_resource type="Script" path="res://Scenes/Turrets/Panels/GunT2Panel.gd" id="4_j6ib8"]
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="4_vlbfd"]
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="5_c8hri"]
 
