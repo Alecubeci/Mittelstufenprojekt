@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf6fth0hlcjcd"]
+[gd_scene load_steps=4 format=3 uid="uid://cf6fth0hlcjcd"]
 
 [ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.gd" id="1_awhi0"]
-[ext_resource type="Texture2D" uid="uid://tp24n6t6bfdr" path="res://Assets/Towers/bulletRed1.png" id="2_0bxyg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftd8s"]
 radius = 6.0
@@ -15,7 +14,6 @@ height = 44.0
 script = ExtResource("1_awhi0")
 
 [node name="BulletDark1" type="Sprite2D" parent="."]
-texture = ExtResource("2_0bxyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

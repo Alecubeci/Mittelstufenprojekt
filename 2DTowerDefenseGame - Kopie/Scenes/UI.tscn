@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bj3e0adp0d7md"]
 
 [ext_resource type="PackedScene" uid="uid://dgjwo6vb6gp7x" path="res://Scenes/Turrets/Panels/GunT1Panel.tscn" id="1_76yfq"]
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="1_xp5p8"]
