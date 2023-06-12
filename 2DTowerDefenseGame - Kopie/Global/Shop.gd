@@ -28,9 +28,10 @@ func _on_gui_input(event):
 		elif event is InputEventMouseMotion and event.button_mask == 1:
 			
 			get_child(1).global_position = event.global_position
-			var mapPath = get_tree().get_root().get_node("GameScene/Map1/EverythingElse")
-			var tile = mapPath.local_to_map(get_global_mouse_position())
-			currTile = mapPath.get_cell_atlas_coords(0 , tile, false)
+			var game_scene = get_tree().get_root().get_node("GameScene")
+			var tileMap = game_scene.get_current_map().get_node("EverythingElse")
+			var tile = tileMap.local_to_map(get_global_mouse_position())
+			currTile = tileMap.get_cell_atlas_coords(0 , tile, false)
 			
 			var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 			
