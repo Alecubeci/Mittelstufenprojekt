@@ -23,6 +23,7 @@ func _ready():
 		print("Fehler beim Laden der Szene: " + map_path)
 	
 	var tileMap = map_instance.get_node("EverythingElse")
+	Game.enemy_path = map_scene
 	var local_position = tileMap.to_local(get_global_mouse_position())
 	var tile = tileMap.get_cell_atlas_coords(0, local_position, false)
 
@@ -55,8 +56,8 @@ func start_next_wave():
 	await get_tree().create_timer(0.2).timeout
 	spawn_enemies(wave_data)
 
-func retrieve_wave_data():  # Der Name der Funktion war falsch
-	var wave_data = [["EnemyAtscn",0.7], ["EnemyAtscn",0.2]]
+func retrieve_wave_data():  
+	var wave_data = [["EnemyAtscn",0.7], ["EnemyAtscn",0.2], ["EnemyAtscn", 0.2]]
 	current_wave +=1
 	enemies_in_wave = wave_data.size()
 	return wave_data

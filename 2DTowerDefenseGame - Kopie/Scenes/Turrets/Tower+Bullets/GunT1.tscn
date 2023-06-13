@@ -63,7 +63,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0lrgq")
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 1.1
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

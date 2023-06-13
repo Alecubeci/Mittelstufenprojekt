@@ -25,6 +25,7 @@ func _process(delta):
 size = Vector2(49, 44)
 
 [node name="PathFollow2D" type="PathFollow2D"]
+loop = false
 
 [node name="EnemyA" type="CharacterBody2D" parent="."]
 script = ExtResource("1_mdes7")

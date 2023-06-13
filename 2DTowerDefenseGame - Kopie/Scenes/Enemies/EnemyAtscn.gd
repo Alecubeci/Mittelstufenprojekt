@@ -20,4 +20,4 @@ func _process(delta):
 
 
 func dead():
-	get_parent().get_parent().queue_free()
+	queue_free()

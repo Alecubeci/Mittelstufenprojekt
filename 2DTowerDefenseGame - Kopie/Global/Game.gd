@@ -7,3 +7,4 @@ var health = 100
 @onready var missleT1 = preload("res://Scenes/Turrets/Tower+Bullets/MissileT1.tscn")
 
 @onready var tower 
+@onready var enemy_path

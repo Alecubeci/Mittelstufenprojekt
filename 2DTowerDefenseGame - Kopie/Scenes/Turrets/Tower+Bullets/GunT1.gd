@@ -8,7 +8,7 @@ var bulletDamage = 5
 var pathName
 var currTarget = []
 var curr
-
+var range = 500
 #func whichBullet():
 #	if Game.tower == "res://Scenes/Turrets/Tower+Bullets/Gun1Bullet.tscn":
 #bullet = 
@@ -29,16 +29,17 @@ func _process(delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 			
 
+
 func shoot():
+
 	var tempBullet = bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
-	tempBullet.target = currTarget 
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
-	
+
 func _on_tower_body_entered(body):
-		if "EnemyA" in body.name:
+		if "EnemyA" in body.get_parent().name:
 			var tempArray = []
 			currTarget = get_node("Tower").get_overlapping_bodies()
 			
