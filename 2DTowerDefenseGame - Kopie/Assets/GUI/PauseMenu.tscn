@@ -1,0 +1,266 @@
+[gd_scene load_steps=8 format=3 uid="uid://tfy5o734w2mp"]
+
+[ext_resource type="Script" path="res://Assets/GUI/PauseMenu.gd" id="1_gfthn"]
+[ext_resource type="FontFile" uid="uid://cyx3xswtmxopj" path="res://Assets/Fonts/MedievalSharp-Regular.ttf" id="2_agurx"]
+[ext_resource type="Script" path="res://Assets/GUI/PauseMenuControl.gd" id="2_qbvrp"]
+[ext_resource type="Script" path="res://Assets/GUI/OptionsPauseMenu.gd" id="4_sdfiw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dupnm"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlvik"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ffhj"]
+bg_color = Color(1, 1, 1, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -300.0
+offset_right = 375.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gfthn")
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.352941)
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qbvrp")
+
+[node name="Menu" type="CenterContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Menu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Menu/Menu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 90
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+
+[node name="ContinueButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options
+"
+
+[node name="QuitButton" type="Button" parent="Menu/Menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit to Menu"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_sdfiw")
+
+[node name="CenterContainer" type="CenterContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="Options/CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 90
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="left" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Audio" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Audio"
+
+[node name="right" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Master Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Master Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="Music" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Music Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="SFX" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFX Volume" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "SFX Volume"
+
+[node name="Mute" type="Label" parent="Options/CenterContainer/VBoxContainer/AudioContainer/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute
+"
+
+[node name="DisplayContainer" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="left" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Display" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Display"
+
+[node name="right" type="HSeparator" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fullscreen" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Enable Fullscreen"
+
+[node name="Display Size" type="HBoxContainer" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Display Size" type="Label" parent="Options/CenterContainer/VBoxContainer/DisplayContainer/VBoxContainer/Display Size"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Display Size"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Options/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Back Button" type="Button" parent="Options/CenterContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(0, 86)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_agurx")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dupnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qlvik")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6ffhj")
+text = "Back
+"
+
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/OptionsButton" to="Menu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/OptionsButton" to="Options" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/Menu/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Options/CenterContainer/VBoxContainer/MarginContainer3/Back Button" to="Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Options/CenterContainer/VBoxContainer/MarginContainer3/Back Button" to="Options" method="_on_back_button_pressed"]

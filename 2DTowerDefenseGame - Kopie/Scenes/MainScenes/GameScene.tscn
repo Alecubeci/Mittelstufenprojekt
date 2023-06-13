@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqhy85gaigive"]
+[gd_scene load_steps=13 format=3 uid="uid://cqhy85gaigive"]
 
 [ext_resource type="Script" path="res://Scenes/MainScenes/GameScene.gd" id="1_wp1c4"]
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="3_u034m"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/Health.gd" id="7_00j71"]
 [ext_resource type="Texture2D" uid="uid://dmyo8sjx58mjo" path="res://Assets/Icons/rewind.png" id="7_cdd58"]
 [ext_resource type="Script" path="res://Scenes/Gold.gd" id="8_r0hbg"]
+[ext_resource type="PackedScene" uid="uid://b2gfrn1dgdme" path="res://Assets/GUI/GUI.tscn" id="12_loaqc"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_wp1c4")
@@ -102,6 +103,8 @@ stretch_mode = 0
 
 [node name="spwantimer" type="Timer" parent="."]
 autostart = true
+
+[node name="GUI" parent="." instance=ExtResource("12_loaqc")]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/GameControls/pausePlay" to="UI" method="_on_pause_play_pressed"]
