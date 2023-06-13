@@ -218,12 +218,14 @@ position = Vector2(-51, -52)
 position = Vector2(0, 3.8147e-06)
 curve = SubResource("Curve2D_wmil0")
 
+[node name="EnemyA" parent="Path2D" instance=ExtResource("5_h2epl")]
+position = Vector2(414, -53)
+rotation = 1.60412
+
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(414, -53)
 rotation = 1.60412
 loop = false
-
-[node name="EnemyA" parent="Path2D/PathFollow2D" instance=ExtResource("5_h2epl")]
 
 [node name="39868" type="Timer" parent="Path2D/PathFollow2D"]
 wait_time = 0.2

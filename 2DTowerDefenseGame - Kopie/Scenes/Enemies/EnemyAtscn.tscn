@@ -24,10 +24,12 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jok2j"]
 size = Vector2(49, 44)
 
-[node name="EnemyA" type="CharacterBody2D"]
+[node name="PathFollow2D" type="PathFollow2D"]
+
+[node name="EnemyA" type="CharacterBody2D" parent="."]
 script = ExtResource("1_mdes7")
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="EnemyA"]
 offset_left = -30.0
 offset_top = -30.0
 offset_right = 31.0
@@ -38,9 +40,9 @@ value = 50.0
 show_percentage = false
 script = SubResource("GDScript_pionm")
 
-[node name="TankSand" type="Sprite2D" parent="."]
+[node name="TankSand" type="Sprite2D" parent="EnemyA"]
 texture = ExtResource("1_4ihjl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyA"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_jok2j")

@@ -19,38 +19,38 @@ func _process(delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 			
 
+
+
 func shoot():
 	var tempBullet = bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
+	tempBullet.target = currTarget 
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
 
+
+
+
 func _on_tower_body_entered(body):
-		if "EnemyA" in body.name:
-			var tempArray = []
-			currTarget = get_node("Tower").get_overlapping_bodies()
+	if "EnemyA" in body.name:
+		var tempArray = []
+		var overlappingBodies = get_node("Tower").get_overlapping_bodies()
+		
+		for i in overlappingBodies:
+			if "Enemy" in i.name:
+				tempArray.append(i)		
 			
-			print(currTarget)
-			for i in currTarget:
-				if "Enemy" in i.name:
-					tempArray.append(i)		
-			
-			currTarget = null
-			
+		if tempArray.size() > 0:
+			currTarget = tempArray[0].get_node("../")
 			for i in tempArray:
-				if currTarget == null:
+				if i.get_parent().get_progress() > currTarget.get_progress():
 					currTarget = i.get_node("../")
-				else:
-					if i.get_parent().get_progress() > currTarget.get_progress():
-						currTarget = i.get_node("../")
-			
-			pathName = currTarget.get_parent().name
-			
-			curr = currTarget
-			pathName = currTarget.get_parent().name  
-			
-			
+		
+		pathName = currTarget.get_parent().name
+		curr = currTarget
+
+
 
 func _on_tower_body_exited(body):
 	currTarget = get_node("Tower").get_overlapping_bodies()

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5bldrb3pbrtu"]
+[gd_scene load_steps=8 format=3 uid="uid://b5bldrb3pbrtu"]
 
 [ext_resource type="Script" path="res://Scenes/Turrets/Tower+Bullets/GunT1.gd" id="1_16qqr"]
+[ext_resource type="Texture2D" uid="uid://bcoo4p5d6j75h" path="res://Assets/Towers/towerDefense_tile180.png" id="2_dhfsx"]
+[ext_resource type="Texture2D" uid="uid://bnvo22h1v0k21" path="res://Assets/Towers/towerDefense_tile249.png" id="3_yc7bj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n08y0"]
 size = Vector2(48, 48)
@@ -12,7 +14,7 @@ radius = 100.0
 size = Vector2(72, 64)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lrgq"]
-bg_color = Color(1, 0, 0, 0.458824)
+bg_color = Color(0, 1, 0, 0.223529)
 corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450
@@ -45,8 +47,10 @@ position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_emo3a")
 
 [node name="TowerDefenseTile180" type="Sprite2D" parent="."]
+texture = ExtResource("2_dhfsx")
 
 [node name="TowerDefenseTile249" type="Sprite2D" parent="."]
+texture = ExtResource("3_yc7bj")
 offset = Vector2(12, 0)
 
 [node name="Area" type="Panel" parent="."]

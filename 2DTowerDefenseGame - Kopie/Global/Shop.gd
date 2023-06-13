@@ -36,13 +36,13 @@ func _on_gui_input(event):
 			var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 			
 			
-			if currTile == Vector2i(0,0) or currTile == Vector2i(1, 0) or currTile == Vector2i(2, 0) or currTile == Vector2i(3, 1) or currTile == Vector2i(4, 1) or currTile == Vector2i(5, 1) or currTile == Vector2i(6, 1):
-					get_child(1).get_node("Area").modulate = Color(255,255,255)
-			else:
-				if targets.size() > 0:
-					get_child(1).get_node("Area").modulate = Color(255,255,255)
-				else:
-					get_child(1).get_node("Area").modulate = Color(0,255,0)
+			#if currTile == Vector2i(0,0) or currTile == Vector2i(1, 0) or currTile == Vector2i(2, 0) or currTile == Vector2i(3, 1) or currTile == Vector2i(4, 1) or currTile == Vector2i(5, 1) or currTile == Vector2i(6, 1):
+			#		get_child(1).get_node("Area").modulate = Color(255,255,255)
+			#else:
+				#if targets.size() > 0:
+				#	get_child(1).get_node("Area").modulate = Color(255,255,255)
+				#else:
+					#get_child(1).get_node("Area").modulate = Color(0,255,0)
 				
 		
 			
@@ -53,9 +53,9 @@ func _on_gui_input(event):
 			else: 
 				if get_child_count() > 1:
 					get_child(1).queue_free()
-				if currTile == Vector2i(0,0) or currTile == Vector2i(1, 0) or currTile == Vector2i(2, 0) or currTile == Vector2i(3, 1) or currTile == Vector2i(4, 1) or currTile == Vector2i(5, 1) or currTile == Vector2i(6, 1):
-					get_child(1).queue_free()
-				else:
+				#if currTile == Vector2i(0,0) or currTile == Vector2i(1, 0) or currTile == Vector2i(2, 0) or currTile == Vector2i(3, 1) or currTile == Vector2i(4, 1) or currTile == Vector2i(5, 1) or currTile == Vector2i(6, 1):
+				#	get_child(1).queue_free()
+				#else:
 					var path = get_tree().get_root().get_node("GameScene")
 					var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 					if targets.size() < 1:

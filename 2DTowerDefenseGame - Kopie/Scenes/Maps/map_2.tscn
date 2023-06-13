@@ -218,9 +218,11 @@ position = Vector2(-51, -52)
 position = Vector2(0, 3.8147e-06)
 curve = SubResource("Curve2D_jdq8c")
 
+[node name="EnemyA" parent="Path2D" instance=ExtResource("5_ourdq")]
+position = Vector2(32, -54)
+rotation = 1.57332
+
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(32, -54)
 rotation = 1.57332
 loop = false
-
-[node name="EnemyA" parent="Path2D/PathFollow2D" instance=ExtResource("5_ourdq")]

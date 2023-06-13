@@ -30,13 +30,13 @@ func _process(delta):
 			
 
 func shoot():
-#	whichBullet()
 	var tempBullet = bullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
+	tempBullet.target = currTarget 
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
-
+	
 func _on_tower_body_entered(body):
 		if "EnemyA" in body.name:
 			var tempArray = []

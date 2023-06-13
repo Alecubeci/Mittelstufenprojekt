@@ -15,7 +15,7 @@ size = Vector2(72, 64)
 radius = 200.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kov80"]
-bg_color = Color(1, 0, 0, 0.458824)
+bg_color = Color(0, 1, 0, 0.168627)
 corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://8v7ovykpgjym"]
+
+[ext_resource type="PackedScene" uid="uid://ri8bgluum85n" path="res://Scenes/Enemies/EnemyAtscn.tscn" id="1_l4yd3"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(1056, -59)
+rotation = -1.5708
+progress = 5172.46
+loop = false
+
+[node name="EnemyA" parent="." instance=ExtResource("1_l4yd3")]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="128952" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
