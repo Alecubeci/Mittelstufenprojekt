@@ -11,13 +11,19 @@ func _process(delta):
 	if get_parent().get_progress_ratio() == 1:
 		Game.health -= 10
 		dead()
+		if Game.health <=0:
+			death()
 		
 	
 	if hp <= 0:
 		Game.gold += 5
 		dead()
 		
+	
 
 
 func dead():
 	queue_free()
+
+func death():
+	get_tree().quit()

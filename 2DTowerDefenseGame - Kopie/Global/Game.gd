@@ -8,3 +8,7 @@ var health = 100
 
 @onready var tower 
 @onready var enemy_path
+
+func death():
+	if health <= 0:
+		print("Tod")

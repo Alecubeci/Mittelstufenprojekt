@@ -220,8 +220,7 @@ curve = SubResource("Curve2D_u380d")
 
 [node name="EnemyA" parent="Path2D" instance=ExtResource("5_y05ri")]
 position = Vector2(-53, 671)
-rotation = -0.00892834
-scale = Vector2(1, 1)
+rotation = -0.00892833
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-53, 671)

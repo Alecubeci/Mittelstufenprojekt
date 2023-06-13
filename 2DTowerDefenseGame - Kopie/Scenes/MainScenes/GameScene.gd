@@ -47,9 +47,14 @@ func _on_wavetimer_timeout():
 	#mobs_left = wave_mobs[wave]
 	$spwantimer.start()
 
-
+var i=0
 func _on_spwantimer_timeout():
-		pass 
+	
+	#if i < 9:
+		#var tempPath = Game.enemy_path.instantiate()
+	#	add_child(Game.enemy_path.instantiate())
+	#	i+=1 
+	pass
 
 func start_next_wave():
 	var wave_data = retrieve_wave_data()
@@ -68,4 +73,6 @@ func spawn_enemies(wave_data):
 		#map_instance.get_node("Path").add_child(new_enemy, true)  
 		await get_tree().create_timer(i[1]).timeout
 
-
+func death():
+	if Game.health <= 0:
+		print("Tod")

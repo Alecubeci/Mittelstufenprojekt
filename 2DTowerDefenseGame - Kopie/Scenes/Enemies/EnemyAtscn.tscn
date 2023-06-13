@@ -24,7 +24,7 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jok2j"]
 size = Vector2(49, 44)
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[node name="PathFollow2D" type="PathFollow2D" groups=["SPAWNING"]]
 loop = false
 
 [node name="EnemyA" type="CharacterBody2D" parent="."]
